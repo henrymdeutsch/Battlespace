@@ -1,10 +1,24 @@
 
-Later:
-- Make small goofs - the ___ ___ Meme in downloads - hide on website in the following way: "Houses of Worship" under
-Practice tab; bottom of nav lined up w/ top of div; click 1/2 way in between the vertical end of div and vertical end of page.
-- replace picture of book "Strategy of Firefighting" with picture in actual library (it's the last one left).
+Main bootstrap can be visited at
+https://startbootstrap.com/previews/agency/
 
+List bootstrap can be visited at
+https://colorlib.com/preview/#jobportal
+
+    ------------------------
 
 Bonus:
+- Get a crop of GP's new book, "Firefighting: Battlespace Combat" that's in line with the rest so that it can be
+    displayed more like the others in a 2x2 configuration on a mobile.
+- Try to get the white boxes of adjacent books to line up on a mobile phone with javascript.
+
+Kind of Unnecessary:
+- Cut down some of the unnecessary code with trial and error deletion. This issue actually isn't as big as I thought though. The page loads almost instantly, my code was just bad.
 - Get higher quality pictures for book covers
-- Cut down the unnecessary code in each file (UnusedCSS) - maybe use this approach for the last list item.
+- Make small goofs - the ___ ___ Meme in downloads - hide on website in the following way: "Houses of Worship" under
+Practice tab; bottom of nav lined up w/ top of div; click 1/2 way in between the vertical end of div and vertical end of page.
+
+IF THE SITE ISN'T UPDATING, YOUR BROWSER MAY HAVE CACHED IT! Go into incognito mode to avoid caching.
+
+Things to Update on GoDaddy:
+- possibly bootstrapp.min.css, that's with

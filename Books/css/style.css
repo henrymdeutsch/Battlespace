@@ -1,0 +1,513 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+}
+
+.page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+    margin-left: -17rem;
+}
+
+#content.active {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -17rem;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        margin: 0;
+    }
+    #content.active {
+        margin-left: 17rem;
+        width: calc(100% - 17rem);
+    }
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+body {
+    background: #599fd9; /* blue from the bootstrap - don't really like it */
+    background: #f8f9fa; /* a grey more in line with vincentdunn.com */
+    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: #343a40 !important;
+}
+
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+/* my stuff */
+
+/* makes toggle look good on phones - menu bar stays in top right and user cannot scroll to text when toggled */
+/*.disableHorizontalScrolling {
+    max-width: 100%;
+    overflow-x: hidden;
+} */
+
+html, body {
+    max-width: 100%;
+    min-width: 380px;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.list-item {
+    color: #343a40 !important;
+    /*font-style: italic !important; */
+    font-family:'nunito sans', sans-serif;
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.list-item:hover {
+    cursor: pointer;
+}
+
+
+ul#vert-nav li {
+    /* #f8f9fa is lighter than #f1f1f1 */
+    background-color: #f8f9fa;
+    list-style: none;
+    padding: 10px 0 10px 10px;
+}
+
+ul#vert-nav li:hover, li.active {
+    background-color: #ccc !important;
+}
+
+#chapters {
+    background-color: #fff;
+    color: #aaa;
+    padding: 10px 0 10px 20px;
+    border: 0px solid black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.rounded-circle {
+    box-sizing: border-box;
+    background-color:rgb(255, 255, 255);
+    border-image-repeat:stretch;
+    border-image-source:none;
+    border-image-width:1;
+    border-radius: 50% !important;
+    border: 1px solid #dee2e6;
+    box-shadow:rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
+    color:rgb(33, 37, 41);
+    padding: 4px 4px 4px 4px;
+    float: left;
+}
+
+.media-body {
+    padding: 10px 0 20px 80px;
+}
+
+.nav-header {
+    background-color: #f8f9fa;
+    padding: 20px 0 0 5px;
+}
+
+#sidebar {
+    background-color: #fff;
+}
+
+#name {
+    margin: 0;
+    padding: 0;
+    color:rgb(33, 37, 41);
+    display:block;
+    font-family:-apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:24px;
+    font-weight:500;
+    height:28px;
+    line-height:28.8px;
+}
+
+#title {
+    margin: 0;
+    padding: 0;
+    color:rgb(108, 117, 125);
+    display:block;
+    font-family:-apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:16px;
+    font-weight:300;
+    height:24px;
+    line-height:24px;
+}
+
+#toggle {
+    background-color:rgb(254, 209, 54);
+    border: none;
+    padding: 13px;
+    margin: 0;
+    color:rgb(255, 255, 255);
+    cursor:pointer;
+    font-family:Montserrat, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:12px;
+    font-stretch:100%;
+    font-weight:400;
+    height:38px;
+    letter-spacing:normal;
+    line-height:12px;
+    text-transform:uppercase;
+    height: 38px;
+    border-radius: 10%;
+    visibility: hidden;
+}
+
+#menuAndLogo {
+    justify-content: flex-start !important;
+    width: 187px;
+}
+
+#toggle {
+    position: relative;
+    top: 5px;
+}
+
+#mainNav {
+    justify-content: flex-start;
+    float: left;
+
+    display: inline !important;
+}
+
+#proBooks {
+    height: 20% !important;
+    width: 20% !important;
+    min-width: 150px !important;
+}
+
+/* chapters and questions toggle */
+
+#chaptersQuestions {
+    color: white;
+    display: block;
+    background-color: #212529;
+    box-shadow: 2px 2px 5px grey;
+    overflow: hidden;
+    /*min-width: 270px !important; */
+
+    /* affected by javascript */
+    padding-left: 60px;
+    text-align: left;
+    margin: 15px 50px 55px 50px;
+    max-width: 1100px;
+    /*min-width: 300px; */
+    min-width: 280px !important;
+}
+
+.tab {
+    display: inline-block !important;
+    font-family:Montserrat, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 15px;
+    font-weight:400;
+    letter-spacing: 1px;
+    padding: 20px 20px 10px 20px;
+    color: white;
+}
+
+/*#mainNav {
+    box-shadow: 2px 2px 5px grey;
+} */
+
+#left {
+    padding-right: 25px;
+}
+
+#right {
+    padding-left: 25px;
+}
+
+.tab:hover {
+    color: #fed136 !important;
+    cursor: pointer;
+}
+
+.current {
+    z-index: 9999;
+    border-bottom: 5px solid #fed136;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+/* questions */
+
+div.options {
+    text-align: left;
+    font-size: 20px;
+}
+
+button.option {
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 8px 10px 8px 50px;
+    margin-bottom: 1px;
+    display: block;
+    font-weight: 300;
+    border: none;
+    text-align: left;
+    position: relative;
+    max-width: 1200px;
+
+    /*border-radius: 5px; */
+}
+
+button.hover:hover {
+    background-color: #ccc !important;
+}
+
+.fontAwesomeBullet {
+    position: absolute; left: 15px;
+}
+
+.next {
+    border: none;
+    text-decoration: none;
+    color: white;
+    height: 43px;
+    width: 100px;
+    margin: 50px 0 0 60px;
+    padding: 7px auto 7px auto;
+    box-shadow: 1px 1px 5px grey;
+
+    /* make it similar to horizontal nav */
+    background-color: #212529;
+    font-family:Montserrat, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:1px;
+    line-height:27px;
+}
+
+.next:hover {
+    cursor: pointer;
+    color: #fed136;
+}
+
+.retake {
+    border: none;
+    text-decoration: none;
+    color: white;
+    margin: 50px 0 0 60px;
+    padding: 8px 20px 8px 20px;
+    box-shadow: 1px 1px 5px grey;
+
+    /* make it similar to horizontal nav */
+    background-color: #212529;
+    font-family:Montserrat, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:1px;
+    line-height:27px;
+}
+
+.chapterAddendum {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* chapters */
+
+.chapter-image-holder {
+    padding: 0;
+    margin: 0;
+    border: none;
+    word-wrap: break-word !important;
+}
+
+.chapter-image-border {
+    width: 50%;
+    min-width: 200px;
+    position: static;
+    float: right;
+    padding: 0 0 10px 3%;
+    font-size: 13px;
+    line-height: 18px;
+    color: #333;
+}
+
+.md {
+    width: 40% !important;
+    min-width: 200px !important;
+    padding: 0 0 10px 3%;
+}
+
+.sm {
+    width: 30% !important;
+    min-width: 200px !important;
+    padding: 0 0 10px 3%;
+}
+.xm {
+    width: 20% !important;
+    min-width: 200px !important;
+    padding: 0 0 10px 10px;
+
+}
+
+.chapter-image {
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.paragraph-header {
+    text-indent: 40px;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+
+.min-width {
+    min-width: 280px;
+}
+.min-width-326 {
+    min-width: 326px;
+}
+.min-width-270 {
+    min-width: 270px;
+}
+
+.fold {
+    display: inline-block !important;
+}
+
+.style1-big {
+    font-weight: 300; font-size: 56px; line-height: 70px;
+}
+.style1-small {
+    font-weight: 600; font-size: 20px;
+}
+.style2-big {
+    font-weight: 400 !important; font-size: 40px !important; line-height: 50px !important;
+}
+.style2-small {
+    font-weight: 600 !important; font-size: 25px !important;
+ }
+
+@keyframes toggleMenuIn {
+    0% {
+        right: 0px;
+    }
+    100% {
+        right: 250px;
+    }
+}
+@keyframes toggleMenuOut {
+    0% {
+        right: 2500px;
+    }
+    100% {
+        right: 200px;
+    }
+}
+.question {
+    display: none;
+}
+
+/* finished quiz section */
+
+.questionFeedbackChunk {
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px 20px 0px 20px;
+    margin: 0 0 5px 0;
+}
+
+.correct {
+    border-color: #e1f8cf;
+    background-color: #f6ffed;
+}
+
+.incorrect {
+    border-color: #fae1e0;
+    background-color: #fff1f1;
+}
+
+.questionHeader {
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 35px;
+}
+
+.questionSubHeader {
+    font-size: 18px;
+    font-weight: 700;
+    display: inline;
+}
+
+.questionSubAnswer {
+    font-size: 18px;
+    font-weight: 300;
+    display: inline;
+}
+
+#timerContainer {
+    width: 100%;
+    max-width: 1200px;
+    border: none;
+    position: relative;
+    bottom: 45px;
+}
+
+#timer {
+    display: inline;
+    float: right;
+}

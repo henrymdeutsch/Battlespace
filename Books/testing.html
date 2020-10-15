@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Testing</title>
+
+</head>
+<body>
+
+<div class="ch1Question">
+    <h5></h5>
+    <h1>Hello1</h1>
+</div>
+<div class="ch1Question">
+    <h5></h5>
+    <h1>Hello2</h1>
+</div>
+<div class="ch1Question">
+    <h5></h5>
+    <h1>Hello3</h1>
+</div>
+
+
+<script>
+    var questions = document.getElementsByClassName("ch1Question");
+    var newArray = Array.from(questions);
+
+    document.write(questions[0].children[1].innerHTML);
+    document.write(questions[1].children[1].innerHTML);
+    document.write(questions[2].children[1].innerHTML);
+
+    document.write("&nbsp;&nbsp;&nbsp;||here now||&nbsp;&nbsp;&nbsp;");
+
+    document.write("got here");
+    newArray.splice(0, 1);
+    document.write("but not here");
+
+    document.write("length: " + newArray.length);
+</script>
+
+</body>
+</html>
+
