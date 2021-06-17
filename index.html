@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Written and developed by Henry Deutsch
-     Email: henrymdeutsch@gmail.com
+     Email me: henrymdeutsch@gmail.com
  -->
 
 <head>
     <meta name="author" content="Henry Deutsch">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-          content="Deputy Chief Vincent Dunn is a long-time veteran of the Fire Department of New York (FDNY). Read newsletters fit with practice problems from one of the biggest recognized authorities on firefighting.">
+    <meta name="description" content="Deputy Chief Vincent Dunn is a long-time veteran of the Fire Department of New York (FDNY). Read articles with practice problems from one of the biggest recognized authorities on firefighting. Meet Chief Vincent Dunn at his own kitchen table where he breaks down first hand
+                            building construction, collapse, and smoke explosions.">
+    <meta name=”keywords” content="vincent dunn, fdny, firefighting, chief, building construction, collapse, smoke, explosions" />
     <meta name="date" content="2020-03-04" scheme="2020-03-04">
 
     <title>Vincent Dunn</title>
@@ -36,14 +37,28 @@
         gtag('js', new Date());
         gtag('config', 'UA-159663356-1');
     </script>
+    <style>
+        #deepDive:hover {
+            cursor: zoom-in;
+            opacity: .5;
+        }
+    </style>
 </head>
 
 <body id="page-top" onload="adjustBooksWithScreen()">
 
+<div id="popUpContainer" style="display: none; position: fixed; width: 100%; height: 100%; z-index: 999999999;" onclick="document.getElementById('popUpContainer').style.display = 'none'">
+    <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; ">
+        <div style="width: 100%; height: 100%; background-color: black; opacity: .5; z-index: 99998;">&nbsp;</div>
+        <img id="popUp" style="max-height: 95%; max-width: 95%; position: fixed; z-index: 9999999999; margin: 0 auto;" src="Home/images/deepDive.jpg"
+             alt="Promotional image displays important information about Chief Dunn's webinar series. It starts at $250 for the full year, starting March 2021.">
+    </div>
+</div>
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <img class="min" height="20%" width="20%" src="Home/images/proBooks.png"/>
+        <img class="min" height="20%" width="20%" src="Home/images/proBooksLogo.png" alt="ProBooks Logo. This is the publishing firm through which you can get one of Chief Dunn's books."/>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -117,16 +132,18 @@
             </div>
 
             <div class="newHighlight col-md-4">
-                <a class="noDecorations" href="https://www.eventbrite.com/o/fd-tactics-training-17551939510"
-                   target="_blank">
+                <!-- Henry Deutsch -->
+                <a class="noDecorations" href="#portfolioModal7" data-toggle="modal" target="_blank">
                     <div>
               <span class="mobile fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
           </span>
                         <h4 class="service-heading">Webinars</h4>
+                        <!-- original text was Chief Dunn at his own kitchen table where he breaks down first hand
+                            building construction, collapse, and smoke explosions -->
                         <p class="text-muted">Meet Chief Dunn at his own kitchen table where he breaks down first hand
-                            building construction, collapse, and smoke explosions.</p>
+                            building construction, firefighting strategy and tactics.</p>
                     </div>
                 </a>
             </div>
@@ -138,7 +155,7 @@
             <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
           </span>
                     <h4 class="service-heading">Facebook</h4>
-                    <p class="text-muted">Stay up to date with real-world dangers, disasters, and deaths on the facebook
+                    <p class="text-muted">Stay up to date with real-world dangers, disasters, and deaths on the Chief's facebook
                         page, “Vincent Dunn’s Fire Battlespace.”</p>
                 </a>
             </div>
@@ -167,11 +184,11 @@
                         </div>
                     </div>
                     <img height="50px" width="100%" class="img-fluid"
-                         src="Home/images/theFirefighter'sBattlespace.jpg" alt="The Firefighter's Battlespace">
+                         src="Home/images/theFirefighter'sBattlespace.jpg" alt="Vincent Dunn's book, The Firefighter's Battlespace. In the foreground a group of firefighters work to put out a raging fire in a church.">
                 </a>
                 <div class="portfolio-caption">
                     <h4 class="fold">Const</h4><h4 class="fold">ruc</h4><h4 class="fold">tion</h4>
-                    <p class="text-muted">$100</p>
+                    <p class="text-muted revertFont">$100</p>
                 </div>
             </div>
             <div class="shrink col-md-4 col-sm-6 portfolio-item">
@@ -181,12 +198,12 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img width="100%" id="swapPhoto" class="img-fluid" src="Home/images/combat.png"
-                         alt="Firefighting: Battlespace Combat">
+                    <img width="100%" id="swapPhoto" class="img-fluid" src="Home/images/combatBook.png"
+                         alt="Vincent Dunn's latest book, Firefighting: Battlespace Combat. Firefighters work to rush a hoseline into a restaurant while walls collapse and smoke billows out of the windows.">
                 </a>
                 <div class="portfolio-caption">
                     <h4 class="fold">Com</h4><h4 class="fold">bat</h4><h4 class="fold" id="advertisement">*new</h4>
-                    <p class="text-muted">$100</p>
+                    <p class="text-muted revertFont">$100</p>
                 </div>
             </div>
             <div class="shrink col-md-4 col-sm-6 portfolio-item">
@@ -197,11 +214,11 @@
                         </div>
                     </div>
                     <img width="100%" class="img-fluid" src="Home/images/theBattlespaceEnemy.jpg"
-                         alt="Fire: The Battlespace Enemy">
+                         alt="Vincent Dunn's book, Fire: The Battlespace Enemy. On the cover a silhouetted firefighter looks back on the dramatic explosion of a massive high-rise building in NYC.">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Fire</h4>
-                    <p class="text-muted">$100</p>
+                    <p class="text-muted revertFont">$100</p>
                 </div>
             </div>
 
@@ -215,12 +232,12 @@
                         </div>
                     </div>
                     <img class="img-fluid"
-                         src="https://cdn11.bigcommerce.com/s-sc17agnp2n/images/stencil/2048x2048/products/1778/1564/pennwell_2269_48341845__43525__13629.1552671915.jpg?c=2"
-                         alt="">
+                         src="Home/images/strategyBook.png"
+                         alt="Vincent Dunn's book, Strategy of Firefighting. A firefighter looks out into the night surrounded by complete darkness except for the bright pile of burning wood and rubble.">
                 </a>
                 <div class="portfolio-caption">
                     <h4 class="fold">Strat</h4><h4 class="fold">egy</h4>
-                    <p class="text-muted">$71</p>
+                    <p class="text-muted revertFont">$71</p>
                 </div>
             </div>
             <div class="showw collapse shrink col-md-4 col-sm-6 portfolio-item">
@@ -230,12 +247,13 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img width="100%" class="img-fluid" src="Home/images/safetyAndSurvivalOnTheFireground.jpg"
-                         target="_blank">
+                    <img width="100%" class="img-fluid"
+                         src="Home/images/safetyAndSurvivalOnTheFireground.jpg"
+                         alt="Vincent Dunn's book, Safety and Survival on the Fireground. A Firefighter stands his ground with tools in both hands as fire whips around him on all sides.">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Fire Safety</h4>
-                    <p class="text-muted">$95</p>
+                    <p class="text-muted revertFont">$95</p>
                 </div>
             </div>
             <div class="showw collapse shrink col-md-4 col-sm-6 portfolio-item">
@@ -245,13 +263,14 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img class="img-fluid vertical-shrink" src="Home/images/collapseOfBurningBuildings.jpg"
-                         alt="Collapse of Burning Buildings">
+                    <img class="img-fluid vertical-shrink"
+                         src="Home/images/collapseOfBurningBuildings.jpg"
+                         alt="Vincent Dunn's book, Collapse of Burning Buildings. The background photo captures a building helplessly engulfed in fire collapsing as firefighters look on.">
                 </a>
                 <div class="portfolio-caption">
                     <h4 class="fold">Building<span style="visibility: hidden;">l</span></h4><h4 class="fold">
                     Collapse</h4>
-                    <p class="text-muted">$83</p>
+                    <p class="text-muted revertFont">$83</p>
                 </div>
             </div>
 
@@ -272,7 +291,7 @@
             </div> -->
 
         </div>
-
+        <!--onclick="if (document.getElementById('button').innerHTML === 'More...') {document.getElementById('button').innerHTML = 'Less'} else {document.getElementById('button').innerHTML = 'Less'}" -->
         <button id="button"
                 style="float: right; background-color: #FED136; border-color: #FED136; color: white !important;"
                 type="button" class="btn btn-primary js-scroll-trigger" data-toggle="collapse" data-target=".showw">
@@ -297,7 +316,7 @@
                     <li>
                         <div class="timeline-image">
                             <img style="height: 100%; width: 100%;" class="rounded-circle img-fluid"
-                                 src="Home/images/beginnings.jpg" alt="">
+                                 src="Home/images/beginnings.jpg" alt="A picture taken of Vincent Dunn as the Commander of Division 3 in midtown Manhattan.">
                         </div>
                         <!-- https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/33192/square_thumb%402x.jpg -->
                         <div class="timeline-panel">
@@ -314,8 +333,8 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img style="height: 100%;" class="rounded-circle img-fluid" src="Home/images/professor.png"
-                                 alt="">
+                            <img style="height: 100%;" class="rounded-circle img-fluid" src="Home/images/professorDunn.png"
+                                 alt="Closeup of Vincent Dunn as he teaches a class, working as an associate professor in the mechanical engineering department of Manhattan College. ">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -331,7 +350,8 @@
                     <li>
                         <div class="timeline-image">
                             <img style="height: 100%;" class="rounded-circle img-fluid"
-                                 src="Home/images/investigation2.jpg" alt="">
+                                 src="Home/images/investigation2.jpg"
+                                 alt="Vincent Dunn while on duty doing investigative work for the National Institute of Standards and Technology. He is calling someone on the phone.">
                         </div>
                         <!-- https://www3.introhive.com/wp-content/uploads/2017/06/law-fim-biz-dev-256x256.jpg -->
                         <div class="timeline-panel">
@@ -349,7 +369,8 @@
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <img style="height: 100%;" class="rounded-circle img-fluid"
-                                 src="https://pbs.twimg.com/media/DaIBIUeUQAADlHj.jpg" alt="">
+                                 src="Home/images/bookSelling.png"
+                                 alt="Vincent Dunn at his table at a book signing, arm in arm with a high-ranking representative from ProBooks. There is a display of Chief Dunn's latest book behind them.">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -381,7 +402,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Vincent Dunn 2020</span>
+                <span class="copyright">Copyright &copy; Vincent Dunn 2021</span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
@@ -616,7 +637,7 @@
                                 venting; locating trapped victims; how and where flame spreads inside and outside a
                                 building; collapse dangers; game-changing events; and last, but not least, how to
                                 evaluate successful and unsuccessful firefighting operations.</p>
-                            <p>This book is scheduled to be released in December 2020</p>
+                            <p>This book is scheduled to be released very soon</p>
 
                             <ul class="list-inline">
                                 <li></li>
@@ -667,6 +688,45 @@
                                target="_blank">
                                 <!-- <i class="fas fa-times"></i> -->
                                 Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal 7 -->
+<div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin: 0 auto; padding-bottom: 0; max-width: 600px;">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="modals text-uppercase">Webinars</h2>
+                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
+                            <div class="img-fluid d-block mx-auto"></div>
+                            <p>Meet Chief Dunn at his own kitchen table where he breaks down first hand
+                                building construction, firefighting strategy and tactics.</p>
+                            <img id="deepDive" style="max-width: 300px; width: 100%;" onclick="document.getElementById('popUpContainer').style.display = 'block'" src="Home/images/deepDive.jpg"
+                                 alt="Promotional image displays important information about Chief Dunn's webinar series. It starts at $250 for the full year, starting March 2021.">
+                            <ul class="list-inline">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <!--<a id="G-seven_buy" class="btn btn-primary"
+                               href="https://fireengineeringbooks.com/collapse-of-burning-buildings-a-guide-to-fireground-safety-second-edition/"
+                               target="_blank"> -->
+                                <!-- <i class="fas fa-times"></i> -->
+                                <!--Buy Now</a> -->
                         </div>
                     </div>
                 </div>

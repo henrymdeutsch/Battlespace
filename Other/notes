@@ -5,12 +5,13 @@ https://startbootstrap.com/previews/agency/
 List bootstrap can be visited at
 https://colorlib.com/preview/#jobportal
 
+Books bootstrap can be visited at
+https://bootstrapious.com/p/bootstrap-vertical-navbar
+
     ------------------------
 
-Bonus:
-- Get a crop of GP's new book, "Firefighting: Battlespace Combat" that's in line with the rest so that it can be
-    displayed more like the others in a 2x2 configuration on a mobile.
-- Try to get the white boxes of adjacent books to line up on a mobile phone with javascript.
+Books tab vertical nav bootstrap at
+https://bootstrapious.com/p/bootstrap-vertical-navbar
 
 Kind of Unnecessary:
 - Cut down some of the unnecessary code with trial and error deletion. This issue actually isn't as big as I thought though. The page loads almost instantly, my code was just bad.

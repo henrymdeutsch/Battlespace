@@ -743,3 +743,15 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 *:focus {
     outline: 0 !important;
 }
+
+p.text-muted {
+    font-family: 'nunito sans', sans-serif;
+}
+
+.text-muted {
+    font-size: 18px !important;
+}
+
+.revertFont {
+    font-family: "Droid Serif", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}

@@ -27,14 +27,13 @@ var menuAndLogo = document.getElementById("menuAndLogo");
 var chapters  = document.getElementsByClassName("toggleOnMobile");
 var chaptersQuestions = document.getElementById("chaptersQuestions");
 var toggleHasBeenAdded = false;
-
-
+var onclickHasBeenAddedToBody2Images = false;
 
 /*on page load, make other tabs dissapear */
 var tabcontent = document.getElementsByClassName("tabcontent");
-for (var i = 0; i < tabcontent.length; i++) {
+/*for (var i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
-}
+} Henry Deutsch */
 
 var chap = document.getElementById('chapter1');
 chap.style.display = "block";
@@ -42,23 +41,70 @@ chap.style.display = "block";
 /* if user is on a mobile phone, make the font smaller & timer farther away */
 var bigText = document.getElementsByClassName("style1-big");
 var smallText = document.getElementsByClassName("style1-small");
-var timerContainer = document.getElementById("timerContainer");
+
+var chapterHeaders = Array.from(document.getElementsByClassName('paragraph-header'));
+
+// adjusts paragraph indentation on chapter headers
+function adjustParagraphIndentation() {
+
+    if (window.innerWidth < 500) {
+        for (var i = 0; i < chapterHeaders.length; i++) {
+            chapterHeaders[i].style.textIndent = '0';
+        }
+    }
+    else if (window.innerWidth > 500) {
+        for (var i = 0; i < chapterHeaders.length; i++) {
+            chapterHeaders[i].style.textIndent = '40px';
+        }
+    }
+}
+window.onresize = adjustParagraphIndentation;
+
+// adds onclick popupImage function so I don't have to do it by hand. Important.
+addOnclickEnlarge();
+function addOnclickEnlarge() {
+    // this adds the onclick to all the images so I don't have to manually. Just give it the class chapter-image and vuala.
+    var images = Array.from(document.getElementsByClassName('chapter-image'));
+    var imageURL;
+    var fullURL;
+    for (var i = 0; i < images.length; i++) {
+        fullURL = ""+images[i].src;
+        imageURL = fullURL.substring(fullURL.indexOf("images"));
+        images[i].setAttribute("onclick", "popupImage('"+ imageURL +"')"); // images/ch1/ch1p2.png   popupImage(imageURL)
+    }
+}
+
+adjustParagraphIndentation();
+function adjustParagraphIndentation() {
+
+    if (window.innerWidth < 500) {
+        for (i = 0; i < chapterHeaders.length; i++) {
+            chapterHeaders[i].style.textIndent = '7px';
+        }
+    }
+    else {
+        for (i = 0; i < chapterHeaders.length; i++) {
+            chapterHeaders[i].style.textIndent = '40px';
+        }
+    }
+}
+window.onresize = adjustParagraphIndentation;
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
-    timerContainer.style.padding = "5px 0 0 0";
-
-
     for (var x = 0; x < bigText.length; x++) {
-        //bigText[x].style.className = "style1-big";
-        bigText[x].style.fontWeight = "400";
+        //bigText[x].style.className = "style2-big";
+        /*bigText[x].style.fontWeight = "400";
         bigText[x].style.fontWeight = "40px";
-        bigText[x].style.lineHeight = "50px";
+        bigText[x].style.lineHeight = "50px"; */
 
         if (bigText[x].classList.contains("relative")) {
             bigText[x].style.position = "relative";
             bigText[x].style.bottom = "20px";
-
+        }
+        if (bigText[x].classList.contains("chapterSpecific")) {
+            bigText[x].style.fontSize = "45px";
+            bigText[x].style.lineHeight = "45px";
         }
     }
     for (var z = 0; z < smallText.length; z++) {
@@ -68,14 +114,13 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     }
 }
 else {
-    timerContainer.style.padding = "5px 20% 0 0";
+
 }
 
 function flexNav() {
-    // for testing purposes
-    //replace.innerHTML = currentlyToggled;
 
-    // make horizontal nav that toggles between chapters and questions responsive
+    // Was used to make shorter horizontal nav that toggles between chapters and questions responsive. In the end I used a css media query instead, but kept this code just in case.
+
     var widthOfChaptersQuestions = chaptersQuestions.clientWidth;
 
     if (widthOfChaptersQuestions > 455) {
@@ -102,45 +147,26 @@ function flexNav() {
             spacer.style.display = "none";
         }
     }
-    // make it disappear so there is no momentary weirdness in the fraction of a second before the javascript runs
+    chaptersQuestions.style.visibility = "visible";         // Make it disappear so there is no momentary weirdness in the fraction of a second before the javascript runs
 
-    chaptersQuestions.style.visibility = "visible";
 
-    /* makes the main header and vertical nav responsive */
-    if (window.innerWidth >= 1200) {
-        container.style.top = "5px";
-        sp1.style.height = "50px";
-        sp2.style.height = "50px";
-        tog.style.visibility = "hidden";
-    }
-    else if (window.innerWidth >= 992) {
-        container.style.top = "5px";
-        sp1.style.height = "40px";
-        sp2.style.height = "40px";
-        tog.style.visibility = "hidden";
-    }
-    else if (window.innerWidth >= 769) {
-        container.style.top = "0px";
-        sp1.style.height = "40px";
-        sp2.style.height = "40px";
-        tog.style.visibility = "hidden";
+    /* makes the main header and vertical nav responsive. Mostly re-written with css. */
+
+
+    if (window.innerWidth >= 769) {
         if (toggleHasBeenAdded) {
             for (var i = 0; i < chapters.length; i++) {
                 chapters[i].removeEventListener('click', toggle);
             }
+            toggleHasBeenAdded = false;
         }
     }
     else if (window.innerWidth >= 295) {
-        container.style.top = "0px";
-        sp1.style.height = "40px";
-        sp2.style.height = "40px";
-        tog.style.visibility = "visible";
-
-        toggleHasBeenAdded = true;
         for (var i = 0; i < chapters.length; i++) {
             //chapters[i].setAttribute("onclick", "toggle()");
             chapters[i].addEventListener('click', toggle);
         }
+        toggleHasBeenAdded = true;
 
         if (!(proBooks.hasAttribute("class"))) {
             proBooks.setAttribute("src", "../Home/images/proBooks.png");
@@ -157,23 +183,10 @@ function flexNav() {
         }
     }
     else {
-        container.style.bottom = "5px";
-        sp1.style.height = "40px";
-        sp2.style.height = "40px";
-        tog.style.visibility = "visible";
         proBooks.setAttribute("src", "images/proBooksMini.png");
         proBooks.removeAttribute("class");
         proBooks.removeAttribute("id");
         proBooks.removeAttribute("height");
-        proBooks.style.width = "100px";
-        proBooks.style.position = "relative";
-        proBooks.style.left = "10px";
-        proBooks.style.top = "10px";
-        menuAndLogo.style.width = "145px";
-        menuAndLogo.style.position = "relative";
-        menuAndLogo.style.bottom = "5px";
-        tog.style.position = "relative";
-        tog.style.bottom = "50px";
     }
 }
 window.onresize = flexNav;
@@ -200,18 +213,129 @@ function openChapter(listNum, chapter) {
     //document.getElementById(chapter).style.display = "block";
     //
 }
+//var myWindow;
 
-// to style the buttons in the form, in QUESTIONS tab.
-function styleButton(buttonId) {
-    var butn = document.getElementById(buttonId);
-    var allButns = document.getElementsByClassName("option");
-    for (var i = 0; i < allButns.length; i++) {
-        allButns[i].children[0].children[0].classList = "fas fa-circle fa-inverse";
-        allButns[i].style.backgroundColor = "#f1f1f1";
+function switchBodies() {
+    var body1 = document.getElementById('body1');
+    var body2 = document.getElementById('body2');
+
+    if (body1.style.display === "none") {
+        body1.style.display = "block"; body1.style.visibility = "visible"; body1.style.position = "static"; body1.style.top = "0"; body1.style.opacity = "100%";
+        // I didn't use display = "none" because then the javascript can't access the elements that were set to no display, which will mean the pictures can't full screen.
+        body2.style.visibility = "hidden"; body2.style.position = "absolute"; body2.style.top = "-999999px"; body2.style.opacity = "0";
+
     }
-    butn.style.backgroundColor = "#ccc";
-    butn.children[0].children[0].classList = "fas fa-dot-circle fa-inverse";
+    else {
+        // it's fine to set body 1 to no display because its contents will be read at the beginning of the program, so no worries there.
+        body1.style.display = "none";
+        body2.style.visibility = "visible"; body2.style.position = "static"; body2.style.top = "0"; body2.style.opacity = "100%";
+    }
+
+    if (!onclickHasBeenAddedToBody2Images) {
+        addOnclickEnlarge();
+        onclickHasBeenAddedToBody2Images = true;
+    }
 }
+
+function openChaptersWindow(chNum, stopNum) {
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        switchBodies();
+        // on phones, there needs to be a _parent level window that has a link at the top of the page back here.
+        var chapterList = document.getElementsByClassName('tabcontentQsection');
+        /*for (var i = 0; i < chapterList.length; i++) {
+            chapterList[i].style.display = "none";
+        }  will prob have to set this back Henry Deutsch*/
+
+        // make sure each chapter is closed
+        for (var i= 1; i <= 27; i++) {
+            var eachChap = document.getElementById('chapter' + i + 'Qsection');
+            eachChap.style.display = "none";
+        }
+
+        // then open the right one
+        var chap = document.getElementById('chapter' + chNum + 'Qsection');
+        chap.style.display = "block";
+
+        // there's no need for a timer on mobile because you're not loading a new page.
+        //                                        'ch' + chNum + 'page' + stopNum
+        var el = document.getElementById('page' + stopNum);
+        el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+        /*for (var i = 0; i < Array.from(el.children).length; i++) {
+            el.children[i].innerHTML = "<span class='highlight'>" + el.children[i].innerHTML + "</span>";
+        } */
+    }
+    else {
+
+        // on laptops and desktops, a new window should open to the right.
+        var myWindow = window.open('book1Chapters.html', '_blank', 'height=9999, width=550, left=9999', true);
+
+
+        setTimeout(load, 500);
+        setTimeout(load, 1000);
+        setTimeout(load, 2000);
+        setTimeout(load, 3000);
+        setTimeout(load, 4000);
+        setTimeout(load, 4500);
+
+        function load() {
+            //myWindow.scrollTo(0,1150);
+            /*
+            var el = myWindow.document.getElementById('ch' + chNum + 'stop' + stopNum);
+            for (var i = 0; i < Array.from(el.children).length; i++) {
+                el.children[i].innerHTML = "<span class='highlight'>" + el.children[i].innerHTML + "</span>";
+            }
+            */
+            //                                                  'ch' + chNum + 'page' + stopNum
+            var el = myWindow.document.getElementById('page' + stopNum);
+
+            myWindow.openChapter('active' + chNum, 'chapter' + chNum);
+            el.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+
+            myWindow.document.getElementById('content').style.backgroundColor = "#eeede2";
+
+            // format chXstopY where X is chapter, Y is stop #.
+        }
+
+    }
+}
+
+function hide(idRef) {
+    document.getElementById(idRef).style.posision = 'absolute';
+    document.getElementById(idRef).style.bottom = '9999px';
+    document.getElementById(idRef).style.right = '9999px';
+}
+
+function popupImage(imgURL) {
+    document.getElementById('body3').style.display = "flex";
+    document.getElementById('body3').style.position = "fixed";
+    document.getElementById('body3').style.bottom = "0";
+    document.getElementById('body3').style.right = "0";
+
+
+    document.getElementById('body3Companion').style.display = "flex";
+    document.getElementById('body3Companion').style.position = "fixed";
+    document.getElementById('body3Companion').style.bottom = "0";
+    document.getElementById('body3Companion').style.right = "0";
+
+
+    var pictureHolder = document.getElementsByClassName('pictureHolder')[0];
+    pictureHolder.removeChild(pictureHolder.childNodes[0]);
+    pictureHolder.innerHTML = "<img class='pictureZoomUp' src="+imgURL+" />";
+}
+
+
+
+
+/* all good background color candidates. Chosen color was capitalized.
+"#eeebe0"
+"#eceee9"
+"#eee8e5"
+"#e0e9ee"
+"#EEEDE2"
+"#c5d8cc"
+ */
+
 
 
 

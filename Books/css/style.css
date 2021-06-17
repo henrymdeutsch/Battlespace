@@ -25,27 +25,31 @@
 
 /* for toggle behavior */
 
-#sidebar.active {
+#sidebar.active, #sidebarQsection.active {
     margin-left: -17rem;
 }
 
-#content.active {
+#content.active, #contentQsection.active {
     width: 100%;
     margin: 0;
 }
 
+#contentQsection {
+    color: black;
+}
+
 @media (max-width: 768px) {
-    #sidebar {
+    #sidebar, #sidebarQsection {
         margin-left: -17rem;
     }
-    #sidebar.active {
+    #sidebar.active, #sidebarQsection.active {
         margin-left: 0;
     }
-    #content {
+    #content, #contentQsection {
         width: 100%;
         margin: 0;
     }
-    #content.active {
+    #content.active, #contentQsection.active {
         margin-left: 17rem;
         width: calc(100% - 17rem);
     }
@@ -59,10 +63,10 @@
 *
 */
 body {
-    background: #599fd9; /* blue from the bootstrap - don't really like it */
-    background: #f8f9fa; /* a grey more in line with vincentdunn.com */
-    background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-    background: linear-gradient(to right, #599fd9, #c2e59c);
+    /*background: #599fd9; /* blue from the bootstrap - don't really like it */
+    /*background: #f8f9fa; /* a grey more in line with vincentdunn.com */
+    /*background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
+    background: linear-gradient(to right, #599fd9, #c2e59c); */
     min-height: 100vh;
     overflow-x: hidden;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -160,7 +164,7 @@ ul#vert-nav li:hover, li.active {
     padding: 20px 0 0 5px;
 }
 
-#sidebar {
+#sidebar, #sidebarQsection {
     background-color: #fff;
 }
 
@@ -172,8 +176,9 @@ ul#vert-nav li:hover, li.active {
     font-family:-apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size:24px;
     font-weight:500;
-    height:28px;
-    line-height:28.8px;
+
+    display: inline-block;
+    padding: 5px 0 0 20px;
 }
 
 #title {
@@ -182,10 +187,11 @@ ul#vert-nav li:hover, li.active {
     color:rgb(108, 117, 125);
     display:block;
     font-family:-apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size:16px;
+    font-size: 16px;
     font-weight:300;
-    height:24px;
-    line-height:24px;
+
+    display: inline-block;
+    padding: 0 0 0 20px;
 }
 
 #toggle {
@@ -216,13 +222,48 @@ ul#vert-nav li:hover, li.active {
 #toggle {
     position: relative;
     top: 5px;
+    position: relative !important; bottom: 500px !important; float: left !important; visibility: hidden; display: inline-block;
 }
 
-#mainNav {
+#mainNav, #mainNavQsection {
     justify-content: flex-start;
     float: left;
-
     display: inline !important;
+}
+
+
+/* sadly this stuff does not work without the importants */
+@media screen and (max-width: 295px) {
+    #container { bottom: 5px !important;}
+    #spacer1 { height: 40px !important; }
+    #spacer2 { height: 40px !important; }
+    #toggle { visibility: visible !important; position: relative !important; bottom: 50px !important;}
+    #proBooks { width: 100px !important; position: relative !important; left: 10px !important; top: 10px !important;}
+    #menuAndLogo { width: 145px !important; position: relative !important; bottom: 5px !important; }
+}
+@media screen and (min-width: 295px) {
+    #container { top: 0 !important; }
+    #spacer1 { height: 40px !important; }
+    #spacer2 { height: 40px !important; }
+    #toggle { visibility: visible !important; }
+}
+@media screen and (min-width: 769px) {
+    #container { top: 0 !important; }
+    #spacer1 { height: 40px !important; }
+    #spacer2 { height: 40px !important; }
+    #toggle { visibility: hidden !important; }
+}
+@media screen and (min-width: 992px) {
+    #container { top: 5px !important; }
+    #spacer1 { height: 40px !important; }
+    #spacer2 { height: 40px !important; }
+    #toggle { visibility: hidden !important; }
+}
+@media screen and (min-width: 1200px) {
+    #container { top: 5px !important; }
+    #spacer1 { height: 50px !important; }
+    #spacer2 { height: 50px !important; }
+    #toggle { visibility: hidden !important; }
 }
 
 #proBooks {
@@ -233,7 +274,7 @@ ul#vert-nav li:hover, li.active {
 
 /* chapters and questions toggle */
 
-#chaptersQuestions {
+#chaptersQuestions, #chaptersQuestionsQsection {
     color: white;
     display: block;
     background-color: #212529;
@@ -250,6 +291,20 @@ ul#vert-nav li:hover, li.active {
     min-width: 280px !important;
 }
 
+@media screen and (max-width: 500px) {
+    #chaptersQuestions {
+        padding-left: 0;
+        text-align: center;
+        margin: 15px 0 55px 0;
+        min-width: 270px;
+    }
+}
+@media screen and (min-width: 420px) {
+    #spacer {
+        display: none;
+    }
+}
+
 .tab {
     display: inline-block !important;
     font-family:Montserrat, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -260,15 +315,15 @@ ul#vert-nav li:hover, li.active {
     color: white;
 }
 
-/*#mainNav {
+/*#mainNav, #mainNavQsection {
     box-shadow: 2px 2px 5px grey;
 } */
 
-#left {
+#left, #leftQsection {
     padding-right: 25px;
 }
 
-#right {
+#right, #rightQsection {
     padding-left: 25px;
 }
 
@@ -317,12 +372,20 @@ button.hover:hover {
 }
 
 .next {
+    display: none;
+
+    /* The relevant paragraph section has too much padding. This was easier to change. */
+    position: relative;
+    bottom: 55px;
+}
+
+.submit, .next, .skip {
     border: none;
     text-decoration: none;
     color: white;
     height: 43px;
     width: 100px;
-    margin: 50px 0 0 60px;
+    margin: 15px 0 0 60px;
     padding: 7px auto 7px auto;
     box-shadow: 1px 1px 5px grey;
 
@@ -335,7 +398,29 @@ button.hover:hover {
     line-height:27px;
 }
 
-.next:hover {
+.skip {
+    margin: 15px 60px 0 0;
+    float: right;
+}
+
+.fullContext {
+    border: none;
+    text-decoration: none;
+    color: white;
+    margin: 20px 0 10px 30px;
+    padding: 8px 23px 8px 23px;
+    box-shadow: 1px 1px 5px grey;
+
+    /* make it similar to horizontal nav */
+    background-color: #212529;
+    font-family:Montserrat, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size:15px;
+    font-weight:400;
+    letter-spacing:1px;
+    line-height:27px;
+}
+
+.submit:hover, .next:hover, .skip:hover, .fullContext:hover {
     cursor: pointer;
     color: #fed136;
 }
@@ -357,12 +442,17 @@ button.hover:hover {
     line-height:27px;
 }
 
-.chapterAddendum {
+.chapterListItem {
     margin: 0 !important;
     padding: 0 !important;
 }
 
 /* chapters */
+
+.row {
+    font-family:'nunito sans', sans-serif;
+    border: none;
+}
 
 .chapter-image-holder {
     padding: 0;
@@ -374,12 +464,15 @@ button.hover:hover {
 .chapter-image-border {
     width: 50%;
     min-width: 200px;
-    position: static;
     float: right;
+    /*position: static;
+    position: relative; right: 0;*/
+    clear: both;
     padding: 0 0 10px 3%;
     font-size: 13px;
     line-height: 18px;
     color: #333;
+    border: none;
 }
 
 .md {
@@ -393,7 +486,7 @@ button.hover:hover {
     min-width: 200px !important;
     padding: 0 0 10px 3%;
 }
-.xm {
+.xs {
     width: 20% !important;
     min-width: 200px !important;
     padding: 0 0 10px 10px;
@@ -403,10 +496,30 @@ button.hover:hover {
 .chapter-image {
     width: 100%;
     margin: 0 0 10px 0;
+    display: block;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px #ccc;
+}
+.noShadow {
+    box-shadow: none;
+}
+
+.chapter-image:hover {
+    cursor: zoom-in;
+    opacity: 0.5;
 }
 
 .paragraph-header {
     text-indent: 40px;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+.paragraph-header-lg {
+    text-indent: 60px;
+    font-weight: 600 !important;
+    font-size: 25px !important;
+}
+.table-header {
     font-weight: 600 !important;
     font-size: 20px !important;
 }
@@ -437,6 +550,25 @@ button.hover:hover {
 .style2-small {
     font-weight: 600 !important; font-size: 25px !important;
  }
+@media screen and (max-width: 500px) {
+    .style1-big {
+        font-weight: 400 !important;
+        font-size: 40px !important;
+        line-height: 50px !important;
+    }
+}
+
+.score {
+    font-size: 25px; line-height: 25px; font-weight: 400; padding: 0 0 20px 10px !important; margin: 0 !important;
+}
+.questionxofx {
+    margin-bottom: 8px !important;
+    font-weight: 500 !important;
+}
+.questionPrompt {
+    margin-bottom: 16px !important;
+    font-weight: 600 !important;
+}
 
 @keyframes toggleMenuIn {
     0% {
@@ -470,13 +602,13 @@ button.hover:hover {
 }
 
 .correct {
-    border-color: #e1f8cf;
     background-color: #f6ffed;
+    border-color: #e1f8cf;
 }
 
 .incorrect {
-    border-color: #fae1e0;
     background-color: #fff1f1;
+    border-color: #fae1e0;
 }
 
 .questionHeader {
@@ -499,15 +631,444 @@ button.hover:hover {
     display: inline;
 }
 
-#timerContainer {
-    width: 100%;
-    max-width: 1200px;
-    border: none;
+.timerContainer {
+    margin: 0;
+    padding: 0 10px 0 0 !important;
+
     position: relative;
-    bottom: 45px;
+    float: right;
+    border: none;
+    width: 100%;
+    /* display: inline; */
+    display: block !important;
+    margin: 0 !important;
 }
 
-#timer {
+.timer {
     display: inline;
+    position: static;
     float: right;
+    font-family: "nunito sans", Arial, sans-serif;
+    font-size: 20px;
+    margin: 0; padding: 0;
+}
+
+/* questions section again */
+.animate {
+    animation-name: wrong;
+    animation-duration: .1s;
+    animation-iteration-count: 2;
+}
+
+@keyframes wrong {
+    0%{
+        border: 0px solid red;
+        padding: 8px 10px 8px 50px;
+        height: 52px;
+    }
+    50% {
+        border: 5px solid red;
+        padding: 3px 5px 3px 45px;
+        height: 52px;
+    }
+    100% {
+        border: 0px solid red;
+        padding: 8px 10px 8px 50px;
+        height: 52px;
+    }
+}
+
+/* relevant Paragraphs */
+
+.relevantParagraph {
+    background-color: #fff;
+    border-radius: 4px;
+    /*box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px; */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    /*box-sizing: border-box; */
+    display: none;
+    font-family: "nunito sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29px;
+    margin: 48px 0px 48px 0px;
+    padding: 25px 20px 25px 20px;
+    /* on mobile this is good: padding: 25px 20px 25px 20px; */
+    text-align: left;
+    overflow: hidden;
+    /*height: 50px; */
+    border: none;
+    font-style: italic;
+    color: black;
+    position: relative;
+    /* padding after animation specified in javascript */
+
+    animation-name: squeezeOut;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+
+.relevantParagraph:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .relevantParagraph {
+        padding: 25px 20px 25px 20px;
+    }
+}
+@media screen and (min-width: 501px) {
+    .relevantParagraph {
+        padding: 48px;
+    }
+    .relevantSection::before {
+        content: "Go To ";
+    }
+}
+
+
+@keyframes squeezeOut {
+    0%{
+        height: 0px;
+        padding: 0 48px 0 48px;
+    }
+    100%{
+        height: 50px; /* change back to 50px */
+        padding: 10px 48px 10px 48px;
+    }
+}
+@keyframes squeezeOutMobile {
+    0%{
+        height: 0px;
+        padding: 0 48px 0 48px;
+    }
+    100%{
+        height: 50px; /* change back to 50px */
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+.xOutContainer {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    background-color: #fff;
+    color: #fff;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    margin: 0;
+}
+
+.xOutContainer:hover {
+    cursor: pointer;
+}
+
+.innerContainer {
+    background-color: white; width: 30px; height: 30px;
+}
+
+.horizontalPic {
+    width: 30px;
+}
+
+.absolutePos {
+    position: absolute;
+}
+
+@keyframes extendLength{
+    0%{
+        height: 50px;
+        padding: 10px 48px 10px 48px;
+    }
+    100%{
+        height: 300px;
+        padding: 48px 48px 48px 48px;
+    }
+}
+
+@keyframes reduceLength{
+    0%{
+        height: 300px;
+        padding: 48px 48px 48px 48px;
+    }
+    100%{
+        height: 50px;
+        padding: 10px 48px 10px 48px;
+    }
+}
+
+.extendLength {
+    animation-name: extendLength;
+    animation-fill-mode: none;
+    animation-duration: 0.5s;
+}
+.reduceLength {
+    animation-name: reduceLength;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+/* for x bar in relevant paragraphs */
+
+.animateMe {
+    animation-name: rotate;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+.animateMeV2 {
+    animation-name: rotateV2;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+.animateMeV3 {
+    animation-name: rotateV3;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+.animateMeV4 {
+    animation-name: rotateV4;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+@keyframes rotateV2 {
+    0%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes rotateV3 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes rotateV4 {
+    0%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.highlight {
+    background-color: #FED136;
+}
+
+#body3 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 80%;
+    z-index: 9999;
+    /*display: flex; */
+    display: none;
+}
+
+#body3Companion {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    /*display: flex; */
+    display: none;
+}
+
+.pictureHolder {
+    border: none;
+    /*width: 60%; */
+    /*min-width: 380px; */
+    /*max-height: 90% !important;
+    max-width: 95% !important; */
+    background-color: #000000;
+    margin: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 100%;
+}
+@media screen and (orientation:landscape) {
+    .pictureHolder {
+        height: 87%;
+        max-width: 90%;
+        overflow: hidden;
+    }
+    .pictureZoomUp {
+        height: 100%;
+    }
+}
+@media screen and (orientation:portrait) {
+    .pictureHolder {
+        width: 90%;
+        max-height: 80%;
+        overflow: hidden;
+    }
+    .pictureZoomUp {
+        width: 100%;
+
+    }
+}
+
+.pictureZoomUp {
+    opacity: 100%;
+}
+
+.errorMessage {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.tabcontent {
+    padding: 0; margin: 0; border: none; overflow: visible; text-wrap: normal;
+    display: none;
+}
+
+.tabcontentQsection {
+    display: none;
+}
+
+#dataPage {
+    display: none; position: relative; top: 0px;
+}
+
+#backToQuiz {
+    position: relative; float: left; display: block !important; background-color: #fed136 !important; padding: 13px !important; margin: 0 !important; font-size: 12px !important;
+}
+
+@media screen and (max-width: 500px) {
+    .innerScale {
+        right: 0 !important;
+    }
+
+    /* extra space means the divs can occupy more width */
+    .scaleAndTextHolder {
+        padding: 0 !important;
+    }
+    .textHolder {
+        width: 50% !important;
+    }
+    .secondHeaderContainer {
+        width: 50% !important;
+    }
+    .indentTable {
+        margin: 0 0 1% 0;
+        position: relative;
+        right: 20px;
+    }
+}
+@media screen and (min-width: 501px) {
+    .innerScale {
+        right: 20% !important;
+    }
+    .scaleAndTextHolder {
+        padding: 0 0 0 5% !important;
+        /*padding: 0 !important; */
+    }
+    .textHolder {
+        width: 45% !important;
+    }
+    .secondHeaderContainer {
+        width: 45% !important;
+    }
+    .indentTable {
+        margin: 0 0 1% 5%;
+    }
+    .marginSometimes {
+        margin: 0 0 20px 0;
+    }
+}
+
+/* The scale thing inside some chapters that goes from good to bad with an arrow */
+.scaleAndTextHolder {
+    margin: 0 !important; padding: 0 0 0 5%; max-width: 930px; border: /*1px solid black*/none; justify-content: start; align-items: normal; display: flex;
+}
+.textHolder {
+    display: inline-block; border: /*1px solid red*/none; padding: 0px 30px 0px 30px; width: 45%;  max-width: 400px; margin: 0; overflow: visible;
+}
+.firstHeader, .secondHeader {
+    margin: 0 !important; font-weight: 600 !important;
+}
+.secondHeaderContainer {
+    display: inline-block; border: /*1px solid red*/none; padding: 0px 30px 0px 30px; width: 45%; max-width: 400px; height: 100% !important;
+}
+.good {
+    margin: 10px 0 0 0 !important; position: absolute; top: 0; right: 0;
+}
+.bad {
+    margin: 0 0 10px 0 !important; position: absolute; bottom: 0; right: 0;
+}
+.arrow {
+    position: absolute; right: -30px; top: 10%; z-index: -1; width: 15px; height: 80%;
+}
+.arrow2 {
+    position: absolute; right: -30px; bottom: 5%; z-index: -1; width: 15px; height: 60%;
+}
+.arrowTableContainer {
+    display: inline-block; position: relative; border: none;
+}
+.arrowTable tr:nth-child(even) {background-color: #eee}
+.oddTdStripes tr:nth-child(odd) {background-color: #eee}
+.oddTdStripes tr:nth-child(even) {background-color: #fff}
+.paddData td, .paddData th {padding: 0 20px 0 0; }
+.paddDataExtra td, .paddDataExtra th {padding: 0 40px 0 0; }
+.alignCenter { text-align: center; }
+.tableBlock { max-width: 400px; padding: 10px 30px; display: inline-block; }
+@media screen and (min-width: 580px) {
+    .arrow2 {
+        height: 70%;
+    }
+}
+.innerText {
+    width: 200% !important; border: /*1px solid orange*/none; position: relative; padding: 10px 50% 10px 0; max-width: 460px;
+}
+.noMargin {
+    margin: 0 !important;
+}
+.indentText {
+    padding: 0; margin: 0 0 0 10px;
+}
+
+.chTable {
+    padding: 0; margin: 20px 0 20px 0;
+}
+.bottomBorder {
+    border-width: 0 0 2px 0; border-color: black; border-style: solid;
+    vertical-align: center;
+}
+.vertAlignTop {
+    vertical-align: top;
+    border: 0px solid black;
+}
+.hereLink, .hereLink:focus, .hereLink:active, .hereLink:visited {
+    text-decoration: none !important;
+    font-style: normal;
+    color: #000;
+    background-color: #eee;
+}
+.pagination {
+    line-height: 0;
+    font-size: 0;
+    white-space: nowrap;    /* supposed to make sure it doesn't cause a new line, but this doesn't work as intended */
+    position: relative;
+    /* when page scrolls to id, the 80px makes up for height of nav */
+    bottom: 80px;
+    visibility: hidden;
 }

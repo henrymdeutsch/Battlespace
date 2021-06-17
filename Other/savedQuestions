@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no">
+
+    <title>Questions</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Original Bootstraps -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="../Archives/css/animate.css">
+    <link rel="stylesheet" href="../Archives/css/style.css">
+    <link rel="stylesheet" href="../Archives/css/new.css">
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+
+
+
+
+</head>
+<body onload="flexNav();">
+
+<!-- <button onclick="toggle()" id="toggle" type="button" style="float: left !important;">
+        <i class="fas fa-align-left fa-inverse fa-1x"></i>
+    </button> -->
+
+<!-- everything -->
+<div id="body1">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div id="container" class="container">
+        <div id="menuAndLogo" style="overflow: visible;">
+            <button onclick="toggle(); changeBodyTextOnToggle();" id="toggle" type="button" style="position: relative !important; bottom: 500px !important; float: left !important; visibility: hidden; display: inline-block;">
+                <i class="fas fa-align-left fa-inverse fa-1x"></i>
+            </button>
+            <!--<img width="100px" src="images/proBooksMini.png" style="visibility: visible;"/> -->
+            <img id="proBooks" class="min" height="20%" width="20%" src="../Home/images/proBooks.png" style="visibility: visible;"/>
+        </div>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span style="color: white !important;">Menu</span>
+            <i class="fas fa-bars fa-inverse"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../Archives/newsletters.html">Newsletters</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../Archives/practice.html">Practice</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="">Research</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" target="_blank"
+                       href="https://www1.nyc.gov/site/fdny/index.page">FDNY</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="spacer1" style="height: 40px;">&nbsp;</div>
+
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar" style="position: fixed !important; overflow: scroll; padding: 0; height: 100% !important;">
+
+    <div id="spacer2" style="height: 40px;">&nbsp;</div>
+
+    <div class="py-4 px-3 mb-4 bg-light">
+        <div class="nav-header">
+            <img src="images/portrait.png" alt="Vincent Dunn" width="65" class="rounded-circle">
+            <!-- wide image of GP at https://www.pennwellbooks.com/product_images/uploaded_images/vince-dunn-photo.jpg -->
+            <!-- original image at https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png -->
+            <div class="media-body">
+                <h2 id="name">Vincent Dunn</h2>
+                <p id="title">Deputy Chief FDNY</p>
+            </div>
+        </div>
+    </div>
+
+    <p id="chapters">CHAPTERS</p>
+
+    <ul id="vert-nav" style="padding: 0 0 20px 0px; margin: 0;">
+        <button class="list-item toggleOnMobile" onclick="openChapter('active1', 'chapter1'); changeBodyTextOnToggle(); initializeQuestions('ch1Question', 1);">
+            <li id="active1" class="list-item-li active">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Private Dwelling Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active2', 'chapter2'); changeBodyTextOnToggle(); initializeQuestions('ch2Question', 2);">
+            <li id="active2" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Strip Store Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active3', 'chapter3'); changeBodyTextOnToggle();  initializeQuestions('ch3Question', 3);">
+            <li id="active3" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Triple-Decker Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active4', 'chapter4'); changeBodyTextOnToggle();">
+            <li id="active4" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Multiple Dwelling Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active5', 'chapter5'); changeBodyTextOnToggle();">
+            <li id="active5" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Warehouse/Loft Building Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active6', 'chapter6'); changeBodyTextOnToggle();">
+            <li id="active6" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Place of Worship Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active7', 'chapter7'); changeBodyTextOnToggle();">
+            <li id="active7" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Lightweight Truss Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active8', 'chapter8'); changeBodyTextOnToggle();">
+            <li id="active8" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                High-Rise Building Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active9', 'chapter9'); changeBodyTextOnToggle();">
+            <li id="active9" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Fire Escape Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active10', 'chapter10'); changeBodyTextOnToggle();">
+            <li id="active10" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Glass and Steel Building Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active11', 'chapter11'); changeBodyTextOnToggle();">
+            <li id="active11" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Buildings Under Construction Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active12', 'chapter12'); changeBodyTextOnToggle();">
+            <li id="active12" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Floor Battlespaces Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active13', 'chapter13'); changeBodyTextOnToggle();">
+            <li id="active13" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Roof Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active14', 'chapter14'); changeBodyTextOnToggle();">
+            <li id="active14" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Timber Truss Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active15', 'chapter15'); changeBodyTextOnToggle();">
+            <li id="active15" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Wall Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active16', 'chapter16'); changeBodyTextOnToggle();">
+            <li id="active16" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Ceiling Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active17', 'chapter17'); changeBodyTextOnToggle();">
+            <li id="active17" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Door and Window Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active18', 'chapter18'); changeBodyTextOnToggle();">
+            <li id="active18" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Topography Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active19', 'chapter19'); changeBodyTextOnToggle();">
+            <li id="active19" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Structure Framing Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active20', 'chapter20'); changeBodyTextOnToggle();">
+            <li id="active20" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Stairway Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active21', 'chapter21'); changeBodyTextOnToggle();">
+            <li id="active21" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Fire-Resistive Building Construction Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active22', 'chapter22'); changeBodyTextOnToggle();">
+            <li id="active22" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Noncombustible/Limited Combustible Construction Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active23', 'chapter23'); changeBodyTextOnToggle();">
+            <li id="active23" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Ordinary Construction Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active24', 'chapter24'); changeBodyTextOnToggle();">
+            <li id="active24" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Heavy Timber Construction Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active25', 'chapter25'); changeBodyTextOnToggle();">
+            <li id="active25" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Wood-Frame Battlespaces
+            </li>
+        </button>
+        <button class="list-item toggleOnMobile" onclick="openChapter('active26', 'chapter26'); changeBodyTextOnToggle();">
+            <li id="active26" class="list-item-li">
+                <!--<i class="fa fa-th-large mr-3 text-primary fa-fw"></i> -->
+                Chronic Fire Spread and Collapse Battlespaces
+            </li>
+        </button>
+    </ul>
+</div>
+
+
+<!-- Page content holder -->
+<div class="page-content p-5 changeWidthWhenToggles" id="content" style="color: black !important;">
+
+    <!--<div id="chaptersQuestions"><a class="tab" id="left" href="chapters.html">CHAPTERS</a><a class="tab current" id="right">QUESTIONS</a></div>-->
+    <!-- this is a very strange brute-force workaround for the fact that the horizontal nav starts to go off the page at small phone sizes. I made a spacer element which has display:none to act like margin even when the screen is smaller than the whole element. Above is the original.-->
+    <div class="changeWidthWhenToggles" style="border: none; min-width: 330px;">
+        <div id="spacer" style="border: 1px solid orange; display: inline-block;  visibility: hidden; width: 48px !important; float: right; margin-top: 15px;">&nbsp;</div>
+
+        <div class="changeWidthWhenToggles" id="chaptersQuestions" style="border: none; visibility: hidden;">
+            <a class="tab" id="left" href="chapters.html">CHAPTERS</a>
+            <a class="tab current" id="right" href="#">QUESTIONS</a>
+        </div>
+
+        <script>
+            if (window.innerWidth > 523) {
+                chaptersQuestions.style.visibility = "visible";
+            }
+        </script>
+    </div>
+
+
+
+
+    <!-- Chapter 1 -->
+    <div id="chapter1" class="tabcontent min-width">
+        <div class="question ch1Question" style="display: none;">
+            <h1 class="style1-big relative">Chapter&nbsp;1 Quiz</h1>
+            <h4 class="style1-small">Question 1 of 25</h4>
+            <p class="lead">The first fire service subject a rookie firefighter must learn is?</p>
+
+            <div class="options lead">
+                <button onclick="styleButton('ch1q1o1'); updateDataTemporarily('The first fire service subject a rookie firefighter must learn is?', 'Building construction', 'Fire', 0, 'ch1q1o1', 'ch1q1o2');" id="ch1q1o1" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Building Construction
+                </button>
+                <button onclick="styleButton('ch1q1o2'); updateDataTemporarily('The first fire service subject a rookie firefighter must learn is?', 'Fire', 'Fire', 1, 'ch1q1o2', 'ch1q1o2');"  id="ch1q1o2" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Fire
+                </button>
+                <button onclick="styleButton('ch1q1o3'); updateDataTemporarily('The first fire service subject a rookie firefighter must learn is?', 'Collapse', 'Fire', 0, 'ch1q1o3', 'ch1q1o2');" id="ch1q1o3" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Collapse
+                </button>
+                <button onclick="styleButton('ch1q1o4'); updateDataTemporarily('The first fire service subject a rookie firefighter must learn is?', 'Search', 'Fire', 0, 'ch1q1o4', 'ch1q1o2');" id="ch1q1o4" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Search
+                </button>
+            </div>
+
+
+            <div class="relevantParagraph">
+                <button class="xOutContainer" onclick="extendLength(); rotateMe();">
+                    <div class="innerContainer">
+                        <div class="absolutePos">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                        <div class="absolutePos animateOnClick">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                    </div>
+                </button>
+
+                <p class="lead">
+                    Relevant Paragraph:
+                </p>
+                <p class="lead">
+                    "First question paragraph: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <button onclick="openChaptersWindow('2', '1');" class="fullContext">
+                    FULL CONTEXT
+                </button>
+            </div>
+
+            <button onclick="updateDataOfficially(); repeatAnimation();" class="submit">
+                SUBMIT
+            </button>
+            <button onclick="displayNextQuestion(); submitShow();" class="next">
+                NEXT ❯
+            </button>
+        </div>
+        <div class="question ch1Question" style="display: none;">
+            <h1 class="style1-big relative">Chapter&nbsp;1 Quiz</h1>
+            <h4 class="style1-small">Question 2 of 25</h4>
+            <p class="lead">Deadly fires happen in the home at what time?</p>
+
+            <div class="options lead">
+                <button onclick="styleButton('ch1q2o1'); updateDataTemporarily('Deadly fires happen in the home at what time?', '6 PM', '12 midnight and after', 0, 'ch1q2o1', 'ch1q2o3');" id="ch1q2o1" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>6 PM
+                </button>
+                <button onclick="styleButton('ch1q2o2'); updateDataTemporarily('Deadly fires happen in the home at what time?', '12 Noon', '12 midnight and after', 0, 'ch1q2o2', 'ch1q2o3');"  id="ch1q2o2" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>12 noon
+                </button>
+                <button onclick="styleButton('ch1q2o3'); updateDataTemporarily('Deadly fires happen in the home at what time?', '12 midnight and after', '12 midnight and after', 1, 'ch1q2o3', 'ch1q2o3');" id="ch1q2o3" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>12 midnight and after
+                </button>
+                <button onclick="styleButton('ch1q2o4'); updateDataTemporarily('Deadly fires happen in the home at what time?', '9 AM', '12 midnight and after', 0, 'ch1q2o4', 'ch1q2o3');" id="ch1q2o4" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>9 AM
+                </button>
+            </div>
+
+            <div class="relevantParagraph">
+                <button class="xOutContainer" onclick="extendLength(); rotateMe();">
+                    <div class="innerContainer">
+                        <div class="absolutePos">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                        <div class="absolutePos animateOnClick">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                    </div>
+                </button>
+
+                <p class="lead">
+                    Relevant Paragraph:
+                </p>
+                <p class="lead">
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <button onclick="openChaptersWindow('1', '1');" class="fullContext">
+                    FULL CONTEXT
+                </button>
+            </div>
+
+            <button onclick="updateDataOfficially(); repeatAnimation();" class="submit">
+                SUBMIT
+            </button>
+            <button onclick="displayNextQuestion(); submitShow();" class="next">
+                NEXT ❯
+            </button>
+        </div>
+        <div class="question ch1Question" style="display: none;">
+            <h1 class="style1-big relative">Chapter&nbsp;1 Quiz</h1>
+            <h4 class="style1-small">Question 3 of 25</h4>
+            <p class="lead">Which is the most deadly cause of fire?</p>
+
+            <div class="options lead">
+                <button onclick="styleButton('ch1q3o1'); updateDataTemporarily('Which is the most deadly cause of fire?', 'Electric', 'Smoking related', 0, 'ch1q3o1', 'ch1q3o3');" id="ch1q3o1" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Electric
+                </button>
+                <button onclick="styleButton('ch1q3o2'); updateDataTemporarily('Which is the most deadly cause of fire?', 'Cooking', 'Smoking related', 0, 'ch1q3o2', 'ch1q3o3');"  id="ch1q3o2" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Cooking
+                </button>
+                <button onclick="styleButton('ch1q3o3'); updateDataTemporarily('Which is the most deadly cause of fire?', 'Smoking related', 'Smoking related', 1, 'ch1q3o3', 'ch1q3o3');" id="ch1q3o3" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Smoking related
+                </button>
+                <button onclick="styleButton('ch1q3o4'); updateDataTemporarily('Which is the most deadly cause of fire?', 'Children', 'Smoking related', 0, 'ch1q3o4', 'ch1q3o3');" id="ch1q3o4" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Children
+                </button>
+            </div>
+
+            <div class="relevantParagraph">
+                <button class="xOutContainer" onclick="extendLength(); rotateMe();">
+                    <div class="innerContainer">
+                        <div class="absolutePos">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                        <div class="absolutePos animateOnClick">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                    </div>
+                </button>
+
+                <p class="lead">
+                    Relevant Paragraph:
+                </p>
+                <p class="lead">
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <button onclick="openChaptersWindow('1', '1');" class="fullContext">
+                    FULL CONTEXT
+                </button>
+            </div>
+
+            <button onclick="updateDataOfficially(); repeatAnimation();" class="submit">
+                SUBMIT
+            </button>
+            <button onclick="displayNextQuestion(); submitShow();" class="next">
+                NEXT ❯
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Chapter 2 -->
+    <div id="chapter2" class="tabcontent min-width">
+        <div class="question ch2Question">
+            <h1 class="style1-big relative">Chapter&nbsp;2 Quiz</h1>
+            <h4 class="style1-small">Question 1 of 25</h4>
+            <p class="lead">True or False: The four deadly horsemen sent by fire to kill firefighters are flame, smoke, heat and toxic gases.</p>
+
+            <div class="options lead">
+                <button onclick="styleButton('ch2q1o1'); updateDataTemporarily('True or False: The four deadly horsemen sent by fire to kill firefighters are flame, smoke, heat and toxic gases.', 'True', 'True', 1, 'ch2q1o1', 'ch2q1o1');" id="ch2q1o1" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>True
+                </button>
+                <button onclick="styleButton('ch2q1o2'); updateDataTemporarily('True or False: The four deadly horsemen sent by fire to kill firefighters are flame, smoke, heat and toxic gases.', 'False', 'True', 0, 'ch2q1o2', 'ch2q1o1');"  id="ch2q1o2" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>False
+                </button>
+            </div>
+
+            <div class="relevantParagraph">
+                <button class="xOutContainer" onclick="extendLength(); rotateMe();">
+                    <div class="innerContainer">
+                        <div class="absolutePos">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                        <div class="absolutePos animateOnClick">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                    </div>
+                </button>
+
+                <p class="lead">
+                    Relevant Paragraph:
+                </p>
+                <p class="lead">
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <button onclick="openChaptersWindow('1', '1');" class="fullContext">
+                    FULL CONTEXT
+                </button>
+            </div>
+
+            <button onclick="updateDataOfficially(); repeatAnimation();" class="submit">
+                SUBMIT
+            </button>
+            <button onclick="displayNextQuestion(); submitShow();" class="next">
+                NEXT ❯
+            </button>
+        </div>
+        <div class="question ch2Question">
+            <h1 class="style1-big relative">Chapter&nbsp;2 Quiz</h1>
+            <h4 class="style1-small">Question 2 of 25</h4>
+            <p class="lead">Which is an incorrect answer?</p>
+
+            <div class="options lead">
+                <button onclick="styleButton('ch2q2o1'); updateDataTemporarily('Which is an incorrect answer?', 'Flashover, rollover, flameover and explosion are the real killers at a fire', 'Flashover, rollover, flameover and explosion are the real killers at a fire', 1, 'ch2q2o1', 'ch2q2o1');" id="ch2q2o1" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Flashover, rollover, flameover and explosion are the real killers at a fire
+                </button>
+                <button onclick="styleButton('ch2q2o2'); updateDataTemporarily('Which is an incorrect answer?', 'Flashover rollover, flameover and explosion are just warning signs', 'Flashover, rollover, flameover and explosion are the real killers at a fire', 0, 'ch2q2o2', 'ch2q2o1');"  id="ch2q2o2" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Flashover rollover, flameover and explosion are just warning signs
+                </button>
+                <button onclick="styleButton('ch2q2o3'); updateDataTemporarily('Which is an incorrect answer?', 'Flame, smoke, heat and explosion are the real killers', 'Flashover, rollover, flameover and explosion are the real killers at a fire', 0, 'ch2q2o3', 'ch2q2o1');"  id="ch2q2o3" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Flame, smoke, heat and explosion are the real killers
+                </button>
+                <button onclick="styleButton('ch2q2o4'); updateDataTemporarily('Which is an incorrect answer?', 'Flashover, rollover, flameover and explosion are spectacular event at a fire', 'Flashover, rollover, flameover and explosion are the real killers at a fire', 0, 'ch2q2o4', 'ch2q2o1');"  id="ch2q2o4" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Flashover, rollover, flameover and explosion are spectacular event at a fire
+                </button>
+            </div>
+
+            <div class="relevantParagraph">
+                <button class="xOutContainer" onclick="extendLength(); rotateMe();">
+                    <div class="innerContainer">
+                        <div class="absolutePos">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                        <div class="absolutePos animateOnClick">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                    </div>
+                </button>
+
+                <p class="lead">
+                    Relevant Paragraph:
+                </p>
+                <p class="lead">
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <button onclick="openChaptersWindow('1', '1');" class="fullContext">
+                    FULL CONTEXT
+                </button>
+            </div>
+
+            <button onclick="updateDataOfficially(); repeatAnimation();" class="submit">
+                SUBMIT
+            </button>
+            <button onclick="displayNextQuestion(); submitShow();" class="next">
+                NEXT ❯
+            </button>
+        </div>
+        <div class="question ch2Question">
+            <h1 class="style1-big relative">Chapter&nbsp;2 Quiz</h1>
+            <h4 class="style1-small">Question 3 of 25</h4>
+            <p class="lead">Which is an incorrect answer regarding flame?</p>
+
+            <div class="options lead">
+                <button onclick="styleButton('ch2q3o1'); updateDataTemporarily('Which is an incorrect answer?', 'Spark becomes flame when it produces heat energy, fuel vapor and enters flammable range', 'Steady flaming stage is the first stage of fire growth', 0, 'ch2q3o1', 'ch2q3o3');" id="ch2q3o1" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Spark becomes flame when it produces heat energy, fuel vapor and enters flammable range
+                </button>
+                <button onclick="styleButton('ch2q3o2'); updateDataTemporarily('Which is an incorrect answer?', 'Flame become fire when it spreads from one point to another', 'Steady flaming stage is the first stage of fire growth', 0, 'ch2q3o2', 'ch2q3o3');"  id="ch2q3o2" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Flame become fire when it spreads from one point to another
+                </button>
+                <button onclick="styleButton('ch2q3o3'); updateDataTemporarily('Which is an incorrect answer?', 'Steady flaming stage is the first stage of fire growth', 'Steady flaming stage is the first stage of fire growth', 1, 'ch2q3o3', 'ch2q3o3');"  id="ch2q3o3" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Steady flaming stage is the first stage of fire growth
+                </button>
+                <button onclick="styleButton('ch2q3o4'); updateDataTemporarily('Which is an incorrect answer?', 'Flame is an exothermic reaction', 'Steady flaming stage is the first stage of fire growth', 0, 'ch2q3o4', 'ch2q3o3');"  id="ch2q3o4" class="option">
+                    <div class="fontAwesomeBullet">
+                        <i class="fas fa-circle fa-inverse"></i>
+                    </div>Flame is an exothermic reaction
+                </button>
+            </div>
+
+            <div class="relevantParagraph">
+                <button class="xOutContainer" onclick="extendLength(); rotateMe();">
+                    <div class="innerContainer">
+                        <div class="absolutePos">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                        <div class="absolutePos animateOnClick">
+                            <img class="horizontalPic" src="images/horizontalBar.png">
+                        </div>
+                    </div>
+                </button>
+
+                <p class="lead">
+                    Relevant Paragraph:
+                </p>
+                <p class="lead">
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </p>
+                <button onclick="openChaptersWindow('1', '1');" class="fullContext">
+                    FULL CONTEXT
+                </button>
+            </div>
+
+            <button onclick="updateDataOfficially(); repeatAnimation();" class="submit">
+                SUBMIT
+            </button>
+            <button onclick="displayNextQuestion(); submitShow();" class="next">
+                NEXT ❯
+            </button>
+        </div>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div id="chapter3" class="tabcontent">
+        <div style="height: 500px; width: 100%; background-color: #ccc;">Test 3 goes here...</div>
+    </div>
+
+    <!-- makes testing easier -->
+    <h1 id="replace" style="display: none;">&nbsp;</h1>
+
+    <!-- End of quiz page -->
+    <!-- to show dataPage on load, make display block. Remember to adjust relative positioning back to normal -->
+    <div id="dataPage" style="display: none; position: relative; top: 0px;">
+        <h1 class="style1-big relative">Results:</h1>
+
+        <div id="question1" class="questionFeedbackChunk">
+            <p class="questionHeader">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error<br>
+            </p>
+            <p class="questionSubHeader">
+                Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question2" class="questionFeedbackChunk">
+            <p class="questionHeader">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error<br>
+            </p>
+            <p class="questionSubHeader">
+                Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question3" class="questionFeedbackChunk">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error<br>
+            </p>
+            <p class="questionSubHeader">
+                Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question4" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question5" class="questionFeedbackChunk incorrect">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question6" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question7" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question8" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question9" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question10" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question11" class="questionFeedbackChunk incorrect">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question12" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question13" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question14" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question15" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question16" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question17" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question18" class="questionFeedbackChunk incorrect">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question19" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question20" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question21" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question22" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question23" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question24" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+        <div id="question25" class="questionFeedbackChunk correct">
+            <p class="questionHeader" style="padding: 0; margin: 0;">
+                The first fire service subject a rookie firefighter must learn is?
+            </p>
+            <p class="questionSubHeader">
+                Your Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+            <p class="questionSubHeader">
+                <br>Correct Answer:
+            </p>
+            <p class="questionSubAnswer">
+                error
+            </p>
+        </div>
+
+        <button onclick="openLastChapter();" class="retake" id="retake" style="display: block">
+            RETAKE QUIZ ❯
+        </button>
+    </div>
+
+    <!-- get this guy further to the left -->
+    <div id="timerContainer">
+        <p class="lead" id="timer">0:00</p>
+    </div>
+
+</div>
+</div>
+
+<div id="body2" style="display: none;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavQsection">
+        <div id="containerQsection" class="container">
+            <button id="backToQuiz" class="navbar-toggler navbar-toggler-right" type="button" onclick="switchBodies();" style="position: relative; float: left; display: block !important;">
+                <span style="color: white !important;">❰ Back To Quiz</span>
+            </button>
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span style="color: white !important;">Menu</span>
+                <i class="fas fa-bars fa-inverse"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsiveQsection">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="../Archives/newsletters.html">Newsletters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="../Archives/practice.html">Practice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" target="_blank"
+                           href="https://www1.nyc.gov/site/fdny/index.page">FDNY</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="spacer1Qsection" style="height: 40px;">&nbsp;</div>
+
+    <!-- Vertical navbar -->
+    <!--<div class="vertical-nav bg-white" id="sidebarQsection"
+         style="position: fixed !important; overflow: scroll; padding: 0; height: 100% !important;">
+        <div id="spacer2Qsection" style="height: 40px;">&nbsp;</div>
+
+        <div class="py-4 px-3 mb-4 bg-light">
+            <div class="nav-header">
+                <img src="images/portrait.png" alt="Vincent Dunn" width="65" class="rounded-circle">
+                <!-- wide image of GP at https://www.pennwellbooks.com/product_images/uploaded_images/vince-dunn-photo.jpg -->
+    <!-- original image at https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png --><!--
+                <div class="media-body">
+                    <h2>Vincent Dunn</h2>
+                    <p>Deputy Chief FDNY</p>
+                </div>
+            </div>
+        </div>
+
+        <p>CHAPTERS</p>
+    </div> -->
+
+
+    <!-- Page content holder -->
+    <div class="p-5" id="contentQsection" style="color: black;">
+
+
+        <!--<div id="chaptersQuestions"><a class="tab" id="left" href="chapters.html">CHAPTERS</a><a class="tab current" id="right">QUESTIONS</a></div>-->
+        <!-- this is a very strange brute-force workaround for the fact that the horizontal nav starts to go off the page at small phone sizes. I made a spacer element which has display:none to act like margin even when the screen is smaller than the whole element. Above is the original.-->
+        <!--<div style="border: none; min-width: 330px;">
+            <div id="spacerQsection"
+                 style="border: 1px solid orange; display: inline-block;  visibility: hidden; width: 48px !important; float: right; margin-top: 15px;">
+                &nbsp;
+            </div>
+
+            <div class="changeWidthWhenToggles" id="chaptersQuestionsQsection" style="border: none; visibility: hidden;">
+                <a class="tab current" id="leftQsection" href="#">CHAPTERS</a>
+                <a class="tab" id="rightQsection" href="questions.html">QUESTIONS</a>
+            </div>
+
+            <script>
+                if (window.innerWidth > 523) {
+                    chaptersQuestions.style.visibility = "visible";
+                }
+            </script>
+        </div> -->
+
+        <!--<div id="chaptersQuestions" style="border: 1px solid red;">
+            <a class="tab current" id="left" style="">CHAPTERS</a>
+            <a class="tab" id="right" href="questions.html" style="">QUESTIONS</a>
+        </div> -->
+
+        <!-- important quote here, if needed
+                <div class="bg-white p-5 rounded my-5 shadow-sm">
+                    <p class="lead font-italic mb-0 text-muted">"This thing: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                </div> -->
+
+        <!-- Chapter 1 -->
+        <div id="chapter1Qsection" class="tabcontentQsection min-width"
+             style="padding: 0; margin: 0; border: none; overflow: visible; text-wrap: normal; display: block;">
+            <h2 class="style1-big relative chapterSpecific">Chapter 1: Private Dwelling
+                <div class="fold">Battle</div>
+                <div class="fold">spaces</div>
+            </h2>
+            <div style="display: none !important;" class="style1-small" id="thisJustMakesTheJavascriptLessComplicated">
+                Testing
+            </div>
+            <p class="lead mb-0">Writing stuff about private dwellings that makes people want to read this.</p>
+            <p class="lead">Writing by
+                <u>Vincent Dunn</u>
+            </p>
+            <!--<div class="separator"></div> -->
+            <div class="row" style="font-family:'nunito sans', sans-serif;" style="border: none;">
+                <div class="min-width">
+                    <p style="" class="lead mb-0 paragraph-header">Fire: The Real Enemy</p>
+                    <p class="lead">The first thing rookie firefighters must learn is the subject of fire. Fire kills men
+                        woman and children in their home. Most firefighters die fighting home fires. Fires in the home occur
+                        most frequently around 6 PM when there is cooking, but the deadly fires happen after midnight, when
+                        people are sleeping or partying. Electric fires result in most monetary damage, but smoking and
+                        matches are still cause of the deadly fires. Fire kills the very old and very young in the home;
+                        young ones don’t know how to react and escape, old ones react too slowly. Alcohol and drugs are big
+                        factors in fires deaths. Fire kills people with four deadly products: smoke, flame, heat and toxic
+                        gas. The most deadly killer is smoke. There are many toxic substances in smoke but carbon monoxide a
+                        colorless, odorless gas is the most common and hydrogen cyanide is another deadly toxic gas being
+                        produced from burning plastic furnishings.</p>
+                    <p class="lead">Fire has been overlooked, underestimated and understudied by fire departments around the
+                        country. This book is a wakeup call for all training officers to re-focus firefighters and teach
+                        them about enemy #1 -fire. At the end of each chapter in this book there is a NIOSH firefighter
+                        fatality investigation. These investigations are only about fire deaths, firefighters killed by
+                        smoke, flame, heat or toxic gases are listed. These selected firefighter deaths are related to the
+                        chapter subject and listed with NIOSH reference number and state of occurrence with cause of death.
+                        Also there is a short sentence excerpt by the author to highlight a lesson learned.</p>
+                    <p class="lead">We have taken our eye off the ball. Fire is killing us and it is going detected and
+                        unreported. This book is a call to focus on our real enemy-fire.</p>
+                </div>
+
+                <div class="chapter-image-holder">
+                    <!-- this div covers the distance of text that will wrap around the image -->
+                    <div class="chapter-image-border md" style="border: none;">
+                        <img class="chapter-image" src="images/ch1/ch1p1.png"/> Fig. 1.1&nbsp;&nbsp;The subject of fire has
+                        been overlooked, underestimated and understudied by fire departments around the country.
+                    </div>
+                    <p class="lead mb-0 paragraph-header">Fire Definition</p>
+                    <p class="lead">Fire has several definitions. First, it is a chemical reaction, combining oxygen, fuel
+                        and heat. Second, it is an oxidation reaction that emits heat and light. Third, it is called an
+                        exothermic reaction because it creates energy flame and light and contains less energy than the
+                        original burned combustible material. An endothermic reaction creates a substance with more
+                        energy.</p>
+
+                    <p class="lead mb-0 paragraph-header">Fire Types</p>
+                    <p class="lead">Fire can be divided into two types, a pool fire and a compartment fire. A flammable
+                        liquid creates a pool fire and paper and wood create compartment fires. This book is about
+                        compartment fire. The compartment fire is the firefighter’s battlespace where we meet our
+                        enemy-fire.</p>
+
+                    <p class="lead mb-0 paragraph-header">Fire Types</p>
+                    <p class="lead">Fire can be divided into two types, a pool fire and a compartment fire. A flammable
+                        liquid creates a pool fire and paper and wood create compartment fires. This book is about
+                        compartment fire. The compartment fire is the firefighter’s battlespace where we meet our
+                        enemy-fire.</p>
+
+                    <p class="lead mb-0 paragraph-header">Fire Growth</p>
+                    <p class="lead">A structure fire growing inside a building/compartment has four stages: a smoldering
+                        stage, growth stage, a steady state or fully developed stage and a decay stage. These four stages of
+                        fire growth are often identified by a time/temperature curve. The first stage of fire can be a small
+                        glowing combustion reaction emitting vapor and gas and no flame. It is depicted on a time
+                        temperature graphic as a very slight angle rise. The second, or growth, stage of a fire is when
+                        flame and smoke appear and start to grows. A growth stage shown on a time temperature graphic is the
+                        steepest upward part of the curve. Time of growth depends on many factors but mostly on the type of
+                        fuel, the size of the room and the amount of oxygen supplying the fire; for example, a mattress fire
+                        and a can of spilled flaming gasoline have different growth stage times. Size matters, a fire in a
+                        small room will complete the growth stage faster than fire in a large room with the same fuel,
+                        oxygen supply and configuration. One of the most important factors of fire growth is air. Oxygen
+                        supplied to a fire determines its rate of burning - the more oxygen supplied the faster the fire
+                        burns. Most fires we respond to and extinguish are in the growth stage when the room is filling up
+                        with smoke and super-heated gases. The third stage of a fire is the steady or fully developed stage.
+                        In this “steady state” /fully developed fire has reached its peak and flame and heat generated in a
+                        relative steady state. In this third stage fire is depicted as the almost horizontal portion of the
+                        time temperature curve reaching the peak temperature. A delayed alarm causes us to arrive when a
+                        fire is in the steady burning fully developed third stage of growth. Now windows have been broken by
+                        the heat, and flames blowing out a window or doorway of a burning room. The time an uncontrolled
+                        fire remains in the fully developed stage depends on the amount of combustible content inside the
+                        room. The second growth stage duration, depends on the type of fuel, a third steady fully developed
+                        stage depends on how much of the fuel there is. The fourth or decay, stage of a fire shown with a
+                        downward line of the time/temperature curve. This stage of fire takes place after most of the
+                        combustible materials in the room/compartment have been consumed. The descending angle of the time
+                        temperature curve depends on whether the fire fuel is consumed or firefighters extinguish the
+                        blaze.</p>
+                </div>
+
+                <div class="chapter-image-holder">
+                    <!-- this div covers the distance of text that will wrap around the image -->
+                    <div class="chapter-image-border" style="border: none;">
+                        <img class="chapter-image" src="images/ch1/ch1p2.png"/> Fig. 1.2&nbsp;&nbsp;Four stages of fire: 1.
+                        smoldering stage, 2. growth stage, 3.a steady state or fully developed stage and 4. decay stage
+                        showing fuel control and ventilation control periods.
+                    </div>
+                    <p class="lead mb-0 paragraph-header">Fuel Controlled Fire</p>
+                    <p class="lead">There is a new way to categorize fire growth; fire can be either controlled by the fuel
+                        in the room and called a fuel-controlled fire, or fire can be controlled by ventilation and called a
+                        ventilation controlled fire, or fire can be controlled by construction and called a construction
+                        fueled fire. A construction controlled fire occurs after passing through the fuel controlled stage
+                        and the ventilation controlled stage. At this time the structure’s fuel load controls now controls
+                        fire growth. This book helps firefighters better understand a fuel-controlled fire and a
+                        ventilation-controlled fire and construction controlled fire and to avoid becoming trapped by
+                        fire.</p>
+                    <p class="lead">In a fuel-controlled blaze fire growth is depending on the furniture and content for
+                        growth. If this fire is allowed to grow it fills up the room with fuel enriched smoke and heat and
+                        now becomes a ventilation-controlled fire. At this stage venting or not venting determines fire
+                        growth more than the furnishing or content. Superheated fuel enriched smoke is now controlling the
+                        fire growth. If firefighters arrive and vent the fire by opening doors and windows this can increase
+                        in create rapid fire growth and possibly flashover. A ventilation controlled fire comes after a
+                        content controlled fire. A ventilation controlled fire is a more dangerous environment than a
+                        content controlled fire. During the early stages of a fuel controlled fire firefighters may enter a
+                        room, crouch down below smoke and heat, see the chair or bed burning and, knock it down with a
+                        portable extinguisher, vent windows and then search for victims. A ventilation-controlled fire is
+                        different.</p>
+                </div>
+
+                <div class="chapter-image-holder">
+                    <!-- this div covers the distance of text that will wrap around the image -->
+                    <div class="chapter-image-border sm" style="border: none;">
+                        <img class="chapter-image" src="images/ch1/ch1p3.png"/> Fig. 1.3&nbsp;&nbsp;This is a
+                        fuel-controlled-fire, feeding on combustible furniture in a room for growth.
+                    </div>
+                    <p class="lead">Here a room is full of superheated fuel enriched smoke forcing firefighter to crouch
+                        down low, visibility is poor, there may be signs of rollover, flickers of flame, mixed with smoke
+                        coming out he door. At this ventilation controlled fire introduction of fresh air could mix with
+                        superheated smoke and flashover can occur at any time. When encountering such a ventilation
+                        controlled fire, entry and search should be coordinated with protection of a hose line advance.</p>
+
+                    <p class="lead mb-0 paragraph-header">Ventilation Controlled Fire</p>
+                    <p class="lead">During the first two stages of fire, smoldering and growth, fire is primarily controlled
+                        by the furnishing in the room, not ventilation. The type burning content is the controlling factor
+                        in the early stages of a compartment fire. However near the end of the growth stage fire changes
+                        from a content controlled to a ventilation controlled fire. Air from firefighting ventilation
+                        tactics has more influence on the fire than the fuel provided by burning furniture. During the early
+                        stages when fuel stills controls fire growth firefighters first on the scene after size up may
+                        decide to enter use portable extinguisher, search and depending on success of the portable
+                        extinguisher, open windows and vent the area. Venting during some fuel controlled fires can actually
+                        delay flashover. It delays flashover by delaying heat build-up that is necessary for flashover by
+                        venting. Venting also improves visibility removing smoke out windows. Often a small fuel controlled
+                        fire, such as, burning stuffed chair or mattress can be controlled with a portable extinguisher
+                        until the hose line arrives for final extinguishment.</p>
+                </div>
+
+                <div class="chapter-image-holder">
+                    <!-- this div covers the distance of text that will wrap around the image -->
+                    <div class="chapter-image-border xm" style="border: none;">
+                        <img class="chapter-image" src="images/ch1/ch1p4.png"/> Fig. 1.4&nbsp;&nbsp;At this
+                        ventilation-controlled-fire air supply has more influence on fire growth than content.
+                    </div>
+                    <p class="lead">A ventilation controlled fire is different and more dangerous, at this fire flashover
+                        can happen at any time. Fire should not be vented and a portable extinguisher will not extinguish
+                        the blaze, smoke reduces visibility and search and entry must be delayed till the hose team is ready
+                        ti advance. It is difficult to size up a fire and accurately determine when a fire changes from fuel
+                        controlled to ventilation controlled. This is where experience counts. If a firefighter makes a
+                        wrong decision it can be fatal, can be caught and trapped by flashover.</p>
+                    <p class="lead">During a ventilation controlled fire firefighters should conduct a defensive search and
+                        close the door. A defensive search consists of sweeping the floor near a door entrance with a tool
+                        feeling for an unconscious person on the floor, checking behind the door for a victims and calling
+                        in the room listening for a response. If no response, close the door to reduce air supply to the
+                        ventilation controlled fire to slow its growth and search with protection of a hose line. Venting of
+                        windows and reopening entrance door should be coordinated with hose team advance.</p>
+                </div>
+
+                <div class="chapter-image-holder">
+                    <!-- this div covers the distance of text that will wrap around the image -->
+                    <div class="chapter-image-border xm" style="border: none;">
+                        <img class="chapter-image" src="images/ch1/ch1p5.png"/> Fig. 1.5&nbsp;&nbsp;Air is a major growth
+                        factor during a ventilation-controlled-fire.
+                        <img class="chapter-image" src="images/ch1/ch1p6.png"/> Fig. 1.6&nbsp;&nbsp;The combustion process
+                        includes heat, fuel and oxygen and an uninhibited chemical chain reaction.
+                    </div>
+                    <div id="ch1stop1">
+                    <p class="lead mb-0 paragraph-header">Fire Triangle</p>
+                    <p class="lead">A fire triangle illustrates three elements a fire needs to ignite and grow: heat, fuel,
+                        and oxygen. The fire triangle also illustrates three way to extinguish fire, removing, heat by
+                        cooling, removing fuel by cutting a fire break at a wildfire, and removing oxygen by not venting and
+                        or replacing air with an inert gas like carbon dioxide.</p>
+                    </div>
+
+                    <p class="lead mb-0 paragraph-header">Fire Tetrahedron</p>
+                    <p class="lead">During WW II new fire extinguishing agents of halon and dry chemical extinguishment
+                        could not be fully explained using the fire triangle. The new extinguishing agents dramatically and
+                        suddenly quenched flame and did not do this by removing heat, fuel, or oxygen. The only explanation
+                        was they inhibited the chemical reaction of fire. These extinguishers disrupted the combustion
+                        process that goes on between heat, fuel and oxygen. So to explain this the scientific community
+                        added the tetrahedron to the fire triangle to show the chemical reaction as part of combustible
+                        process. So now we have identified four parts to a combustion process one on each side of a
+                        tetrahedron: heat, oxygen, fuel and the chain reaction and it shows the fire service four ways we
+                        can extinguish fire. For example, 1. water from hose streams extinguishes fire by removing heat.
+                        Water cooling reduces the temperature of the fire. In addition a water stream generates steam which
+                        reduces oxygen near a fire, and when using fog nozzle fog droplets also block the radiation feedback
+                        necessary for combustion, however evaporation of the water into steam is the primary cooling
+                        extinguishing effect of water. 2. Firefighters remove fuel by shutting off the gas supply to a gas
+                        fire. And in many old cities wide cross-streets were designed to remove fuel. Wide streets were not
+                        designed for heavy traffic. Instead were designed as fuel removal "firebreaks" and “conflagration
+                        preventers”. Removing the fuel is the oldest method of fire extinguishment. 3. You remove oxygen
+                        from a fire by using foam by floating it on top of the burning oil and producing an air-excluding
+                        continuous layer of vapor-sealing material, taking away oxygen from the fire. When the oxygen
+                        content is reduced from 2l percent to l0 percent by a foam blanket the fire will be extinguished. 4.
+                        The final new method of fire extinguishment is by interrupting the combustion reaction going on
+                        between heat, fuel and oxygen. An inert gas extinguisher, such as dry-chemical and halon gas,
+                        directed at a fire causes dramatic, immediate fire-extinguishing effects that scientists do not
+                        fully understand.</p>
+
+                    <p class="lead mb-0 paragraph-header">Fire Spread</p>
+                    <p class="lead">There are three methods of fire spread (heat transfer) a firefighter must understand:
+                        convection, conduction and radiation. The most common heat transfer during a structure fire is
+                        convection. Flame spreading through open doors, windows, up stairways and shafts, and by "auto
+                        exposure" - window, to a window, are all examples of heat transfer by convection. Convection is the
+                        transfer of heat by fluids, such as liquid or gas, flame is a gas transferring heat at a fire.
+                        Convection heat spread by flame is our number one fire spread concern. Another example of fire
+                        spread by convection heat is when flames in a concealed wall space travel up several floors and
+                        break out in an attic. Heated air expands, becomes lighter than the surrounding air and rises.
+                        Conduction is the transfer of heat from one body to another by direct contact. If convection is the
+                        concern during early stages of firefighting, conduction heat transfer is a concern during the late
+                        stage We look for conduction fire spread when we overhaul after a fire is under control. An example
+                        of conduction is when the heated underside of a corrugated metal roof conducts heat to the
+                        combustible asphalt or tar roof covering above. Radiation heat transfer is a major fire spread
+                        problem at large fires and conflagrations. Fire in a fully involved heavy timber, mill building or
+                        wood-frame dwelling can spread fire by radiated heat. Radiation is heat transfer from one body to
+                        another by invisible electromagnetic heat rays through space. The first sign of fire spread by
+                        radiation from one building to another will be wood window frames or wood cornice or façade,
+                        smoldering and bursting into flame.</p>
+                </div>
+
+                <div class="chapter-image-holder">
+                    <!-- this div covers the distance of text that will wrap around the image -->
+                    <div class="chapter-image-border md" style="border: none;">
+                        <img class="chapter-image" src="images/ch1/ch1p7.png"/> Fig. 1.6&nbsp;&nbsp;The combustion process
+                        includes heat, fuel and oxygen and an uninhibited chemical chain reaction.
+                    </div>
+                    <p class="lead mb-0 paragraph-header">Rapid Fire Progression</p>
+                    <p class="lead">Research has identified another new fire phenomenon called rapid fire progression (RFP).
+                        NIOSH firefighter fatality investigations have identified an unusually rapid fire spread at several
+                        fires trapping firefighters. Rapid fire progression as it is called is documented in NIOSH
+                        firefighter fatality reports: 2007-12; 2007-18; 2009-11; 2011-02; 2014-02. Rapid fire progression is
+                        a spreading flame more rapidly than a normal fire. It cannot be stopped or extinguished with hose
+                        streams and forces firefighters to retreat for survival. Rapid fire progression can be caused by
+                        fuel enriched smoke from burning plastic furnishings and decorations, arson flammable liquid
+                        residue, wind driven fire and rapid air rush after a building collapse. Rapid fire progression
+                        caused the greatest loss of firefighter life in the 21century, when it engulfed nine firefighter
+                        inside the sofa super furniture store of South Carolina, NIOSH firefighter fatality report 2007-18 .
+                        Examples of rapid fire progression not documented in NIOSH firefighter fatality investigations are
+                        the Rhode Island station fire caused by flammable wall and ceiling decorations, New York City high
+                        intensity stairway fires in housing projects caused by multiple coats of oil paint build-up covering
+                        graffiti, and floor collapse in the 1991 Brackenridge PA. fire when the first floor collapsed into
+                        the cellar and a ball of rapid fire progression killed four firefighters operating a hose line on
+                        the first floor; and in the 1966 New York City 23rd street collapse where the first floor collapsed
+                        into the cellar with 10 firefighters then a rush of rapid fire progression killed two firefighters
+                        on the first floor trying to escape. Rapid fire progression is something firefighters have
+                        experienced in the past, but not identified. Rapid fire progression (RFP) now has been documented in
+                        wind driven fire tests by Underwriters testing of 2010 and NIOSH has confirmed it in several
+                        firefighter deaths. Rapid fire progression is a wakeup call of what is to come from the plastic
+                        furnishing environment of homes.</p>
+                </div>
+
+                <p class="lead mb-0 paragraph-header">Additional Reading</p>
+                <ul>
+                    <li class="lead chapterAddendum">
+                        Fire Death: 1 firefighter dead, NIOSH- 2011-02, Maryland, cause of death thermal burns to airway,
+                        (Firefighter searching above trapped by rapid fire progression up stair (Photo shows his facepiece
+                        melted from the extensive heat produced by the rapid fire progression. The other fire fighter who
+                        was with the victim was forced to jump out a bedroom window and was injured by the fall.)
+                    </li>
+                    <li class="lead chapterAddendum">
+                        Fire Protection Handbook, Vol. 1, Sec. 2-54 Basics of Fire and Fire Science
+                    </li>
+                    <li class="lead chapterAddendum">
+                        D. Madrzykowski and S. Kerber, "Fire Fighting Tactics Under Wind Driven Conditions: Laboratory
+                        Experiments," National Institute of Standards and Technology, Gaithersburg, MD, TN 1618 January 2009
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- chapter 2 -->
+        <div id="chapter2Qsection" class="tabcontentQsection">
+            <h2 class="display-4">Chapter 2: Something Else</h2>
+            <p class="lead mb-0">Writing stuff about private dwellings that makes people want to read this.</p>
+            <p class="lead">Writing by <a href="https://bootstrapious.com/snippets" class="">
+                <u>Vincent Dunn</u></a>
+            </p>
+            <!--<div class="separator"></div> -->
+            <div class="row" style="font-family:'nunito sans', sans-serif;">
+                <p class="lead mb-0" style="text-indent: 40px; font-weight: 600;">Heading: Here</p>
+                <p class="lead">The first thing rookie firefighters must learn is the subject of fire. Fire kills men woman and children in their home. Most firefighters die fighting home fires. Fires in the home occur most frequently around 6 PM when there is cooking, but the deadly fires happen after midnight, when people are sleeping or partying. Electric fires result in most monetary damage, but smoking and matches are still cause of the deadly fires. Fire kills the very old and very young in the home; young  ones don’t know how to react and escape, old ones react too slowly. Alcohol and drugs are big factors in fires deaths. Fire kills people with four deadly products: smoke, flame, heat and toxic gas.  The most deadly killer is smoke. There are many toxic substances in smoke but carbon monoxide a colorless, odorless gas is the most common and hydrogen cyanide is another deadly toxic gas being produced from burning plastic furnishings.</p>
+                <div id="ch2stop1" style="display: block !important;">
+                <p class="lead">Stop Here: Fire has been overlooked, underestimated and understudied by fire departments around the country. This book is a wakeup call for all training officers to re-focus firefighters and teach them about enemy #1 -fire. At the end of each chapter in this book there is a NIOSH firefighter fatality investigation. These investigations are only about fire deaths, firefighters killed by smoke, flame, heat or toxic gases are listed. These selected firefighter deaths are related to the chapter subject and listed with NIOSH  reference number and state of occurrence with cause of death. Also there is a short sentence excerpt by the author to highlight a lesson learned.</p>
+                </div>
+                <p class="lead">The first thing rookie firefighters must learn is the subject of fire. Fire kills men woman and children in their home. Most firefighters die fighting home fires. Fires in the home occur most frequently around 6 PM when there is cooking, but the deadly fires happen after midnight, when people are sleeping or partying. Electric fires result in most monetary damage, but smoking and matches are still cause of the deadly fires. Fire kills the very old and very young in the home; young  ones don’t know how to react and escape, old ones react too slowly. Alcohol and drugs are big factors in fires deaths. Fire kills people with four deadly products: smoke, flame, heat and toxic gas.  The most deadly killer is smoke. There are many toxic substances in smoke but carbon monoxide a colorless, odorless gas is the most common and hydrogen cyanide is another deadly toxic gas being produced from burning plastic furnishings.</p>
+                <p class="lead">Fire has been overlooked, underestimated and understudied by fire departments around the country. This book is a wakeup call for all training officers to re-focus firefighters and teach them about enemy #1 -fire. At the end of each chapter in this book there is a NIOSH firefighter fatality investigation. These investigations are only about fire deaths, firefighters killed by smoke, flame, heat or toxic gases are listed. These selected firefighter deaths are related to the chapter subject and listed with NIOSH  reference number and state of occurrence with cause of death. Also there is a short sentence excerpt by the author to highlight a lesson learned.</p>
+            </div>
+        </div>
+
+        <!-- chapter 3 -->
+        <div id="chapter3Qsection" class="tabcontentQsection">
+            <h2 class="display-4">Chapter 3: Something else entirely.</h2>
+            <p class="lead mb-0">Writing stuff about private dwellings that makes people want to read this.</p>
+            <p class="lead">Writing by <a href="https://bootstrapious.com/snippets" class="">
+                <u>Vincent Dunn</u></a>
+            </p>
+            <!--<div class="separator"></div> -->
+            <div class="row" style="font-family:'nunito sans', sans-serif;">
+                <p class="lead mb-0" style="text-indent: 40px; font-weight: 600;">Heading: Here</p>
+                <p class="lead">The first thing rookie firefighters must learn is the subject of fire. Fire kills men woman
+                    and children in their home. Most firefighters die fighting home fires. Fires in the home occur most
+                    frequently around 6 PM when there is cooking, but the deadly fires happen after midnight, when people
+                    are sleeping or partying. Electric fires result in most monetary damage, but smoking and matches are
+                    still cause of the deadly fires. Fire kills the very old and very young in the home; young ones don’t
+                    know how to react and escape, old ones react too slowly. Alcohol and drugs are big factors in fires
+                    deaths. Fire kills people with four deadly products: smoke, flame, heat and toxic gas. The most deadly
+                    killer is smoke. There are many toxic substances in smoke but carbon monoxide a colorless, odorless gas
+                    is the most common and hydrogen cyanide is another deadly toxic gas being produced from burning plastic
+                    furnishings.</p>
+                <p class="lead">The first thing rookie firefighters must learn is the subject of fire. Fire kills men woman
+                    and children in their home. Most firefighters die fighting home fires. Fires in the home occur most
+                    frequently around 6 PM when there is cooking, but the deadly fires happen after midnight, when people
+                    are sleeping or partying. Electric fires result in most monetary damage, but smoking and matches are
+                    still cause of the deadly fires. Fire kills the very old and very young in the home; young ones don’t
+                    know how to react and escape, old ones react too slowly. Alcohol and drugs are big factors in fires
+                    deaths. Fire kills people with four deadly products: smoke, flame, heat and toxic gas. The most deadly
+                    killer is smoke. There are many toxic substances in smoke but carbon monoxide a colorless, odorless gas
+                    is the most common and hydrogen cyanide is another deadly toxic gas being produced from burning plastic
+                    furnishings.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
+
+<script src="js/script.js"></script>
+<script src="js/questions.js"></script>
+<!--<script src="js/questionsQsection.js"></script> -->
+
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/3debb69ff0.js" crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="../Home/vendor/jquery/jquery.min.js"></script>
+<script src="../Home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!--
+<script>
+    var reader = document.getElementById("screenReader");
+    reader.innerHTML = "your device's screen width is " + window.innerWidth;
+
+
+    function reportWindowSize() {
+        reader.innerHTML = "your device's screen width is " + window.innerWidth;
+    }
+    window.onresize = reportWindowSize;
+
+</script> -->
+
+
+
+</body>
+</html>

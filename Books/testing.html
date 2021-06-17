@@ -1,44 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
+    <title>Read Text File</title>
 
-    <title>Testing</title>
-
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-
-<div class="ch1Question">
-    <h5></h5>
-    <h1>Hello1</h1>
-</div>
-<div class="ch1Question">
-    <h5></h5>
-    <h1>Hello2</h1>
-</div>
-<div class="ch1Question">
-    <h5></h5>
-    <h1>Hello3</h1>
-</div>
-
-
-<script>
-    var questions = document.getElementsByClassName("ch1Question");
-    var newArray = Array.from(questions);
-
-    document.write(questions[0].children[1].innerHTML);
-    document.write(questions[1].children[1].innerHTML);
-    document.write(questions[2].children[1].innerHTML);
-
-    document.write("&nbsp;&nbsp;&nbsp;||here now||&nbsp;&nbsp;&nbsp;");
-
-    document.write("got here");
-    newArray.splice(0, 1);
-    document.write("but not here");
-
-    document.write("length: " + newArray.length);
-</script>
+<table cellpadding="0" cellspacing="0" style="border: 0px solid black;" class="lead vertAlignTop">
+    <tr>
+        <td class="firstHeader vertAlignCenter bottomBorder lead">
+            Floor System
+        </td>
+        <td class="firstHeader vertAlignCenter bottomBorder lead">
+            Average Failure Time in Minutes
+        </td>
+    </tr>
+    <tr>
+        <td class="vertAlignTop lead">
+            Solid-wood beam
+        </td>
+        <td class="vertAlignTop lead">
+            15:01
+        </td>
+    </tr>
+    <tr>
+        <td class="vertAlignTop lead">
+            Wood I-joist
+        </td>
+        <td class="vertAlignTop lead">
+            7:20
+        </td>
+    </tr>
+    <tr>
+        <td class="vertAlignTop lead">
+            Steel C-beam
+        </td>
+        <td class="vertAlignTop lead">
+            8:10
+        </td>
+    </tr>
+    <tr>
+        <td class="vertAlignTop lead">
+            Lightweight wood truss
+        </td>
+        <td class="vertAlignTop lead">
+            4:48
+        </td>
+    </tr>
+</table>
 
 </body>
-</html>
 
+</html>

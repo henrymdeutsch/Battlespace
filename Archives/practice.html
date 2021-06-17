@@ -12,6 +12,8 @@
     </script>
 
     <title>Vincent Dunn Practice</title>
+    <link rel="shortcut icon" href="../Home/images/fdny.png" type="image/x-icon">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -29,7 +31,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <img class="min" height="20%" width="20%" src="../Home/images/proBooks.png"/>
+        <img class="min" height="20%" width="20%" src="../Home/images/proBooksLogo.png"/>
         <!-- actual: http://faithdeutschfmp.online/PRO-BOOKS-logo_v2.png -->
         <!-- replacement: https://designrr.io/wp-content/uploads/2018/10/designrr-logo-white.png -->
 
@@ -398,7 +400,17 @@
                     <div class="job-post-item-header d-flex align-items-center">
                         <h2 class="mr-3 text-black h4">Taxpayer Fires</h2>
                         <div class="badge-wrap">
-                            <span class="bg-primary text-white badge py-2 px-3">Commercial</span>
+                            <a id="hiddenLink" href="../Books/book1Chapters.html"><span class="bg-primary text-white badge py-2 px-3">Commercial</span></a>
+                            <style>
+                                #hiddenLink:hover {
+                                    cursor: text;
+                                }
+                                #hiddenLink:link, #hiddenLink:active, #hiddenLink:visited {
+                                    text-decoration: none;
+                                    font-style: normal;
+                                }
+                            </style>
+
                         </div>
                     </div>
                     <div class="job-post-item-body d-block d-md-flex">
@@ -415,7 +427,7 @@
                 <div class="ml-auto d-flex">
                     <a href="Practice/Challenge%20Questions/Taxpayer%20Fires.pdf" target="_blank" class="btn btn-primary py-2 mr-1">Questions</a>
                     <!-- Practice/Answers/Taxpayer%20Fires%20Anwers.pdf, target blank -->
-                    <a href="../Books/chapters.html" id="greenA" class="btn btn-primary py-2 mr-1">Answers</a>
+                    <a href="Practice/Answers/Taxpayer%20Fires%20Anwers.pdf" target="_blank" id="greenA" class="btn btn-primary py-2 mr-1">Answers</a>
                 </div>
             </div>
         </div>

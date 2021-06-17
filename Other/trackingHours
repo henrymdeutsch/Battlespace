@@ -1,0 +1,119 @@
+
+(just for fun, (-) means no coffee, -** means 2 cups of coffee. - is regular, one cup)
+
+// BOOKS ONLY //
+(100.3 hours as of the end of 10/26/20)
+(135.3 hours as of the end of 11/1/20)
+(147.8 hours as of the end of 12/20/20 hourly = $27.06)
+(156.8 hours as of the end of 1/24/21 hourly = $25.51)
+
+I think I'll be charging at least $5,000 for the next webinizing thing - both to make up some hourly wages, and because there will be a whole lot of manual work involved.
+
+Tracking Hours
+(just for fun, to see hourly rate at the end)
+- 9/28/20: 8:20pm - 11:30pm: 3hrs 10 minutes: found bootstrap, changed design to be more in line with existing website, made viewable on phone, started to work on glitches.
+    (spent all day working on Mom's HTML email)
+- 9/30/20: 2.5 hours spent messing with a bootstrap that I ended up giving up because trimming it down was too complicated. Got some good ideas though. Like I think switching between chapter & questions should be done with a second nav bar that floats there.
+- 9/30/20: another 2 hours 15 minutes after 9. For that entire time I was just making a completely separate doc starting completely from trash, at the very least just to learn.
+- 10/5/20: probably 5 hours total. Didn't actually do anything. More just figured out that I had already solved the nav issue (scrolling off screen), and then figured out that including it as a tab in the website it too much work - better to have it fill in a new tab.
+- 10/6/20: around 5 hours total. Finished the vertical nav bar and started adding the header into the mix. Ran into an issue, though.
+- 10/7/20: 4 hours 20 minutes hours total. Worked on nav bar and heading for 3 hours 40 minutes. Kept thinking I was done, and then though of other things to change. Spent the rest of that time looking for bootstraps.
+- 10/8/20: 6 hours total. Spent 3 hours working on getting a horizontal nav to suck on a skinny iphone, but be bearable elsewhere. 3 hours working on making the nav bar actually toggle between chapters (all on a single site).
+- 10/9/20: 5.5 hours total. Spent 4.5 hours working on the style of questions (mostly spent fixing bug of text flowing around bullet) + fixed bugs in index page books section. Spent 40 minutes thinking about stuff and doing nothing, and then 20 minutes copying just the text of Ch. 1 onto the website.
+- 10/10/20: 6.3 hours total. Spent 6.3 hours working on the general layout of everything. Payed around with toggle mechanics to fix a bunch of bugs on iphone, and planned out the style of chapter 1 and further chapters. Fixed a bunch of bugs.
+- 10/11/20: 4 hours total. Spent 3.5 hours getting text to stay while toggling and messing around with miscellaneous things. Spent the remaining 30 minutes getting the fonts in chapters to look consistent.
+- 10/13/20: 7.6 hours total. Spent around 3 of that trying to figure out why arr.splice wasn't working, and finally went on codementor. The rest was very efficient, worked solely on javascript for questions, got very far.
+- 10/14/20: 6.2 hours total. Sent 5 hours getting question javascript to work. Bam. Everything I was stressing over done in 2 days (actually 13 hours but whatever). Spent the next hour almost fucking up everything, and then reverting it to the way it was before. The beginning of this hour was one of the most stressful 15 minute periods I've ever had.
+(surgery, got lazy)
+- 10/17/20: 8 hours total. Only the most inefficient work, of course. Re-made questions section so that feedback is after every question. Put in relevant paragraph section.
+- 10/19/20: 7.5 hours total. Significantly inefficient as well. Worked on designing and working out the relevant paragraph section.
+- 10/20/20: 4.5 hours about. Pretty efficient actually, but progress is slow nonetheless. Made "Full context" link link to an actual page that scrolled down, and added background color. Hosted it, asked GP what he thought.
+- 10/21/20: 6.2 hours. Worked just on getting relevant paragraph popup to work on mobiles.
+- 10/22/20: 4.5 hours. Fixed glitches I was stressing over so much in under an hour. Spent the remaining time making images clickable with javascript alone, so I won't have to add anything more in my hand.
+(-) 10/23/20: 1 hour. Made the pictures clickable on the mobile quizzes popup. I need to speed the fuck up. 7 hours tomorrow minimum, 8 hopefully.
+(-) 10/24/20: 4 hours. Made indentation on paragraph headers in chapters section different based on screen width. Randomized question choices! I'm done until I know which book I'm doing!
+-** 10/26/20: 6.8 hours. Super efficient. Got skip button to work ok and prepped html docs for copy and paste from grandpa's website. Passed the hundred hour mark.
+-** 10/27/20: 5 hours. Fixed next button in under 30 minutes! Started trying to set max height on popup photos but bailed after an hour. Spent an hour and a half putting in quiz ch.26 and realized this shit will take way too long. Started looking into reading files but didn't get very far because there are like 3 thing I don't know per line in all the examples.
+-** 10/28/20: around 4 hours (earlier day was spent efficiently getting into Vexillology & heraldry). Spent a bit of time surrounding codementor meeting about how to read text file - just make it a big string! Spent 2.5 hours cleaning up text file, then .5 hours writing about how I did it for next time.
+-** 10/29/20: 2 hours. Started to create the javascript to populate the questions. Then got sucked into Youtube.
+-** 10/30/20: 13 hours. Spent first 7.5 successfully digitalizing the quiz and solving bugs in quiz section. Spent around 2 hours saving all photos in book 1 to images folder. Spent remaining time (3.5 hrs) creating relatively robust automatedHTML java doc to help transcription speed. Stayed up until past 5am for all this.
+- 10/31/20: 4.5 hours. 2.5 hours spent creating good/bad slider template. 1.5 hours spent tweeking java code and largely failing, spent the rest of the time copying text from book to chapters. Spent remaining 25 minutes doing just text from chapters 2,3,4,5.
+(-) 11/1/20: 6.5 hours. Spent 3.2 hours pasting just the text from chapters 6, 7, 8. Got better text file? Spent around another 3 hours putting in the images to chapters 2-8. only to realize I was way over-complicating things. The outer div is completely unnecessary, but doesn't hurt (so what I've already done will stay). Pretty much finished everything I can do without a cleaner text file.
+(waiting for cleaner text file)
+- 12/16/20: 45 minutes spent making sure his word doc types would be good to use in program and emailing him.
+- 12/17/20: 30 minutes spent putting in foreword in chapter format.
+- 12/19/20: 15 minutes spent copying text from third- and fourth- to last chapters.
+- 12/20/20: 11 hours; 3.5 hours spent finishing C&P the material of last 2 chapters & glossary into site. 4.5 hours spent C&P all images & Fig. text onto site. 45 minutes spent styling pictures and messing around with styling. 2.5 hours spent retooling code to send users to a page rather than a quote. My hourly wage is currenly half of what it should be ($25.5)
+- 1/22/21: 1.5 hours; spent familiarizing myself with the pagination problem and starting it for about 30 minutes.
+- 1/23/21: 1.5 hours spent on on monotonous pagination work.
+- 1/24/21: 8 hours; first 2.5 hours spent finishing the monotonous pagination work. Next 1.5 hours spent turning unnecessary javascript into css media queries. Spent next 2 hours emailing grandpa videos of finished site, getting the zoomed images to work on mobile questions section, and re-factoring my css code for zoomed photos so they always take up a good amount of screen size.
+
+// WEBINARS THINGS //
+(9.25 hours as of the end of 12/1/20    hourly = $54.05)
+
+- 11/27/20: 4 hours 45 mins. Started and finished Webinars page, I think.
+- 11/28/20: 1 hour 35 mins. Nearly finished page except for text which I'll copy and past in. Added quotes at the bottom of stuff, fixed a bunch of things (no more empty space below title, footer is centered, more button disappears when necessary, made X smaller in popup. Hourly wage is down to ~$80/hr.
+- 11/29/20: 1 hour 15 minutes. 1 hour spent mostly trying to decipher his email and then calling him. Then spent 15 minutes sending him the links in a word doc, getting icon in tab to show and updating goDaddy. Fuck, my wages have dropped to 68/hr. Let this be done.
+- 12/1/20: 1 hour 40 minutes spent asking Grandpa wtf he wants, kissing goodbye the work spent on the $500 project we worked on and inserting some shitty graphic. Most of the time spent making it clickable and consistent across device screen sizes. All this extra work has knocked my hourly wages down to what they should be :( almost exactly 55/hr.
+
+
+
+/* TO DO */
+- Search very end of file and make sure Battlespace casualties is accurate.
+- Do search for "Fig" to check that there is no Fig text in paragraphs (probably the most common mistake my program makes)
+- Add alt tags to all images with a find-replace. Check if literally all images have no alt tags first.
+
+/* LEARNED */
+
+- The power of min-width: 300 !important; - if the entire body of text is drifting to the left, surround everything in a div and give it that property. Needs to be wrapped closely around elements so there is no conflicting rule.
+- media queries > javascript when possible. @media screen and (max-width: 300px; || orientation: portrait/landscape) { ... }
+- Making carousels or tabs just relies on style display: none default, then onclick javascript style.display = block. Basically just display property. That's it.
+- To align things horizontally and vertically to the center, just apply these CSS properties to the parent: display: flex; justify-content: center; align-items: center; Creates flex box.
+
+/* DATA FILE */
+
+Steps to clean data file:
+1. Cut off everything after ch 26 question 15. Added " &&&" to the end of chapters. Ex: "CHAPTER 1 &&&".
+2. Search for "True or False?". Go through 1 round to make question in one line and paste "1. True (new line) 2. False". Go through another round to keep track of all the T/F section to take notes.
+3. Search for "Answer True" and make "Answer A", search for "Answer False" and make "Answer B"
+4. Search for " A.", " B.", " C.", " D." for answer choices all on the same line.
+5. Search for ".A.", ".B.", ".C.", ".D.", for answer choices not put to next line.
+6. Search for "cA.", "cB.", "cC.", "cD.", where c is every letter of the alphabet, for answer choices that are not put to next line where previous sentence was not ended with a period
+7. Search for " #.", where # is 1-15 (not 1-9 b/c of period), for questions that are not put to next line
+8. Search for ".#.", where # is 1-15 (not 1-9 b/c of period), for questions that are not put to next line
+9. Search for "cA.", "cB.", "cC.", "cD.", where c is every letter of the alphabet, for answer choices that are not put to next line where previous sentence was not ended with a period
+10. Search for "A	", "B	", "C	", "D	", where that space is copied from questions - it's like a really long space. Don't search "A ",etc. - it's not a space. It's something else; for answer choices that do not have a dot after the letter.
+11. Search "1" just to make it easier on the eyes; Manually go through and check there are numbers 1-15 for each chapter.
+12. Just to make it easier on the eyes, search for "       ..." where ... is as many spaces as still returns a result. Replace with " ". Keep deleting spaces from search one by one and replacing with " " until you've gotten down to 2 spaces. Leave 2 spaces in for the questions and answer choices; for spots with too much space. Search "	" and replace with " ". Search " Answers" and replace with "Answers". Search "  " and replace with " ".
+
+DOUBLE CHECK. Take count of T/F questions to know how long the data file should be if everything is correct. Correct size should be (6 lines/Q) x (15 Q's/ch) x (26chs) + (26 lines for ch names) - (2 x 101 T/F Q's). Adjust for books. Adjust too if one chapter is more than 15 questions.
+All told, took me 2.5 hours including bathroom breaks etc.
+
+Changes made to file:
+- Ch. 7 Q10 is very strange. Took out all the in between answers, and set the answer to C.
+- There were a few paragraphs that had a bolded sentence but no colon. I put the bolded part as the paragraph header. These instances begin in chapter 7. First example of header is "There is no uniform, standard size, sheet metal connection"
+- The first sentence of chapter 8 was changed from my copy. A bunch of things were just grammatically or otherwise wrong.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
