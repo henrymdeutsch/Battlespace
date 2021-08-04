@@ -1169,7 +1169,6 @@ A. True
 B. False
 (reference#)
 Answer 1, page 173
-
 12. True or False? (Game-changer) A terrazzo floor over a fire is a game-changer.
 A. True
 B. False
