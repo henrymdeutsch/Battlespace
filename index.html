@@ -22,6 +22,7 @@
     <!-- Bootstrap core CSS -->
     <link href="Home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="Home/css/agency.css" rel="stylesheet">
+    <link href="Home/css/modal.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
 
@@ -443,36 +444,45 @@
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <!-- x out -->
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="modals text-uppercase">Building Construction: The Firefighter's Battlespace</h2>
-                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
-                            <div class="img-fluid d-block mx-auto"></div>
-                            <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
-                                firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
-                                inside and outside of a burning building. A battlespace is not just the room and fire,
-                                it includes much more. Dunn also tells us about firefighting “game changers” in this
-                                book. A “game changer” is notification of an event, construction feature or fire growth
-                                that changes an incident commander’s thinking or strategy.</p>
-                            <ul class="list-inline">
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <a id="G-one_buy" class="btn btn-primary"
-                               href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
-                               target="_blank">
-                                <!-- <i class="fas fa-times"></i> -->
-                                Buy Now</a>
+            <!-- actual modal contents -->
+            <div class="container"> <!-- Deleted divs: class="row", "col-lg-8 mx-auto", "modal-body" -->   
+                <div class="modal-vertical-flexbox">
+                    <div class="modal-title">
+                        <h2 class="modals text-uppercase text-main">Building Construction: The Firefighter's Battlespace</h2>
+                        <p class="item-intro text-muted text-subtitle">Vincent Dunn (Ret.), FDNY</p>
+                    </div>
+                    <div class="modal-non-title">
+                        <div class="modal-flexbox">
+                            <div class="modal-picture-frame">
+                                <img class="modal-book-cover" src="Home/images/theFirefighter'sBattlespace.jpg" alt="book cover">
+                            </div>
+                            <div class="modal-text">
+                                <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
+                                    firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
+                                    inside and outside of a burning building. A battlespace is not just the room and fire,
+                                    it includes much more. Dunn also tells us about firefighting “game changers” in this
+                                    book. A “game changer” is notification of an event, construction feature or fire growth
+                                    that changes an incident commander’s thinking or strategy.</p>
+                                <ul class="list-inline">
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <a id="G-one_buy" class="btn btn-primary"
+                                href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
+                                target="_blank">
+                                    <!-- <i class="fas fa-times"></i> -->
+                                    Buy Now
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
