@@ -11,6 +11,9 @@
 #page-top {
     position: relative;
 }
+/* .modal-backdrop {
+    display: none !important
+} */
 #blackCurtainz {
     position: absolute;
     display: block !important;

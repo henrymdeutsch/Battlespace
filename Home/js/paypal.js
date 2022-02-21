@@ -10,7 +10,7 @@ function revealModal(num) {
 
     /* TODO */
     /* the paypal thing has an id, so try to add that id to its parent when the modal is revealed, and delete it when it's hidden */
-    var targetDiv = document.getElementById('portfolioModal1');
+    var targetDiv = document.getElementById('portfolioModal2');
     targetDiv = targetDiv.children.item(0).children.item(0).children.item(1).children.item(0).children.item(2);
     console.log('here she is: ' + targetDiv.innerHTML);
     targetDiv.innerHTML = '<div id="paypal-button-container"></div>';
