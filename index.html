@@ -28,6 +28,9 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159663356-1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>      <!-- jQuery -->
+
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -47,6 +50,8 @@
 </head>
 
 <body id="page-top" onload="adjustBooksWithScreen()">
+<div id='blackCurtainz'></div>
+
 
 <div id="popUpContainer" style="display: none; position: fixed; width: 100%; height: 100%; z-index: 999999999;" onclick="document.getElementById('popUpContainer').style.display = 'none'">
     <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; ">
@@ -178,7 +183,7 @@
 
 
             <div class="shrink col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal" target="_blank">
+                <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal" target="_blank" onclick="revealModal(1)">
                     <div id="G-one" class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fas fa-plus fa-3x"></i>
@@ -441,11 +446,11 @@
 
 <!-- Portfolio Modals -->
 <!-- Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">    
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- x out -->
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(1)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
@@ -469,20 +474,16 @@
                                     it includes much more. Dunn also tells us about firefighting “game changers” in this
                                     book. A “game changer” is notification of an event, construction feature or fire growth
                                     that changes an incident commander’s thinking or strategy.</p>
-                                <ul class="list-inline">
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                                <a id="G-one_buy" class="btn btn-primary"
+                                
+                                <!-- <a id="G-one_buy" class="btn btn-primary"
                                 href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
-                                target="_blank">
-                                    <!-- <i class="fas fa-times"></i> -->
-                                    Buy Now
-                                </a>
+                                target="_blank"> Buy Now </a> -->
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="modal-payment">
+                        <!-- <div id="paypal-button-container"></div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -493,39 +494,40 @@
 <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <!-- x out -->
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(2)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="modals text-uppercase">Safety and Survival on the Fireground</h2>
-                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
-                            <div class="img-fluid d-block mx-auto"></div>
-                            <p>Chief Dunn―the recipient of FDNY's Lifetime Achievement Award―has updated his classic
-                                book on how to identify and survive hazards on the fireground. Dunn attempts to reduce
-                                firefighter deaths and injuries year after year by describing the 15 most dangerous
-                                tactics and the 13 most recurring fire and explosion environmental dangers, ranked by
-                                degree of danger and frequency of occurrence.</p>
-                            <p>This indispensable book will help keep every first responder, firefighter, and fire
-                                officer out of harm’s way. It is a must-read and reread for every firefighter who
-                                responds to fires and emergencies, every company officer who commands a fire company,
-                                and every incident commander or safety officer who is responsible for the safety of
-                                firefighters on the fireground.</p>
-                            <ul class="list-inline">
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <a id="G-two_buy" class="btn btn-primary"
-                               href="https://fireengineeringbooks.com/safety-and-survival-on-the-fireground-2nd-edition/"
-                               target="_blank">
-                                <!-- <i class="fas fa-times"></i> -->
-                                Buy Now</a>
+            <!-- actual modal contents -->
+            <div class="container"> <!-- Deleted divs: class="row", "col-lg-8 mx-auto", "modal-body" -->   
+                <div class="modal-vertical-flexbox">
+                    <div class="modal-title">
+                        <h2 class="modals text-uppercase text-main">Building Construction: The Firefighter's Battlespace</h2>
+                        <p class="item-intro text-muted text-subtitle">Vincent Dunn (Ret.), FDNY</p>
+                    </div>
+                    <div class="modal-non-title">
+                        <div class="modal-flexbox">
+                            <div class="modal-picture-frame">
+                                <img class="modal-book-cover" src="Home/images/theFirefighter'sBattlespace.jpg" alt="book cover">
+                            </div>
+                            <div class="modal-text">
+                                <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
+                                    firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
+                                    inside and outside of a burning building. A battlespace is not just the room and fire,
+                                    it includes much more. Dunn also tells us about firefighting “game changers” in this
+                                    book. A “game changer” is notification of an event, construction feature or fire growth
+                                    that changes an incident commander’s thinking or strategy.</p>
+                                
+                                <!-- <a id="G-one_buy" class="btn btn-primary"
+                                href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
+                                target="_blank"> Buy Now </a> -->
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-payment">
+                        <div id="paypal-button-container"></div>
                     </div>
                 </div>
             </div>
@@ -537,36 +539,40 @@
 <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <!-- x out -->
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(3)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="modals text-uppercase">Fire: The Battlespace Enemy</h2>
-                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
-                            <div class="img-fluid d-block mx-auto"></div>
-                            <p>Chief Dunn declares everything you know about fire is outdated and has changed. New
-                                scientific research and Firefighter fatality investigations give us a new understanding
-                                of fire. NIST, UL, NIOSH and NFPA have exploded the definition of combustion and
-                                revealed new insight and clarity about the “red devil”—the Firefighter’s enemy.
-
-                            </p>
-                            <p>There are no chemistry of fire definitions in this book. Chief Dunn delivers cutting-edge
-                                fire research and the real-world lowdown on flame, smoke, heat and toxic gases, along
-                                with some hard-learned fire experience.</p>
-
-                            <p>As a Firefighter once said, “You cannot know enough about something that kills you.” Fire
-                                kills. This book identifies the dangers and teaches you how to survive.</p>
-                            
-                            <a id="G-three_buy" class="btn btn-primary"
-                               href="https://www.fdnypro.org/books/fire-the-battlespace-enemy/" target="_blank">
-                                Buy Now</a>
+            <!-- actual modal contents -->
+            <div class="container"> <!-- Deleted divs: class="row", "col-lg-8 mx-auto", "modal-body" -->   
+                <div class="modal-vertical-flexbox">
+                    <div class="modal-title">
+                        <h2 class="modals text-uppercase text-main">Building Construction: The Firefighter's Battlespace</h2>
+                        <p class="item-intro text-muted text-subtitle">Vincent Dunn (Ret.), FDNY</p>
+                    </div>
+                    <div class="modal-non-title">
+                        <div class="modal-flexbox">
+                            <div class="modal-picture-frame">
+                                <img class="modal-book-cover" src="Home/images/theFirefighter'sBattlespace.jpg" alt="book cover">
+                            </div>
+                            <div class="modal-text">
+                                <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
+                                    firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
+                                    inside and outside of a burning building. A battlespace is not just the room and fire,
+                                    it includes much more. Dunn also tells us about firefighting “game changers” in this
+                                    book. A “game changer” is notification of an event, construction feature or fire growth
+                                    that changes an incident commander’s thinking or strategy.</p>
+                                
+                                <!-- <a id="G-one_buy" class="btn btn-primary"
+                                href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
+                                target="_blank"> Buy Now </a> -->
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-payment">
+                        <div id="paypal-button-container"></div>
                     </div>
                 </div>
             </div>
@@ -578,38 +584,40 @@
 <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <!-- x out -->
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(4)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="modals text-uppercase">Strategy of Firefighting</h2>
-                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
-                            <div class="img-fluid d-block mx-auto"></div>
-                            <p>This is a "how to" book written by a "know how" person for anyone who practices
-                                firefighting strategy. Deputy Chief Vincent Dunn is passing on to the next generation of
-                                firefighters the lessons ("strategy summaries") he learned from his years of
-                                firefighting experience. He describes firefighting strategies for the most common types
-                                of fire scenarios and identifies specific firefighting problems presented to an incident
-                                commander by occupancy and construction type. More importantly, he explains firefighting
-                                solutions and offers firefighting plans, standard procedures, action plans, ideas,
-                                guidelines, explanations, key steps, and systems of firefighting procedures. This book
-                                is not about tactics. It's about strategy - plans of firefighting, logical ways to solve
-                                problems at fires.</p>
-                            <ul class="list-inline">
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <a id="G-four_buy" class="btn btn-primary"
-                               href="https://fireengineeringbooks.com/strategy-of-firefighting/" target="_blank">
-                                <!-- <i class="fas fa-times"></i> -->
-                                Buy Now</a>
+            <!-- actual modal contents -->
+            <div class="container"> <!-- Deleted divs: class="row", "col-lg-8 mx-auto", "modal-body" -->   
+                <div class="modal-vertical-flexbox">
+                    <div class="modal-title">
+                        <h2 class="modals text-uppercase text-main">Building Construction: The Firefighter's Battlespace</h2>
+                        <p class="item-intro text-muted text-subtitle">Vincent Dunn (Ret.), FDNY</p>
+                    </div>
+                    <div class="modal-non-title">
+                        <div class="modal-flexbox">
+                            <div class="modal-picture-frame">
+                                <img class="modal-book-cover" src="Home/images/theFirefighter'sBattlespace.jpg" alt="book cover">
+                            </div>
+                            <div class="modal-text">
+                                <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
+                                    firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
+                                    inside and outside of a burning building. A battlespace is not just the room and fire,
+                                    it includes much more. Dunn also tells us about firefighting “game changers” in this
+                                    book. A “game changer” is notification of an event, construction feature or fire growth
+                                    that changes an incident commander’s thinking or strategy.</p>
+                                
+                                <!-- <a id="G-one_buy" class="btn btn-primary"
+                                href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
+                                target="_blank"> Buy Now </a> -->
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-payment">
+                        <div id="paypal-button-container"></div>
                     </div>
                 </div>
             </div>
@@ -621,38 +629,40 @@
 <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <!-- x out -->
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(5)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="modals text-uppercase">Firefighting: Battlespace Combat</h2>
-                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
-                            <div class="img-fluid d-block mx-auto"></div>
-                            <p>What is this book, <i>Battlespace Combat</i>, about? It is not about fire spread or
-                                construction; this is a how-to book. It is about strategy; it contains action plans; it
-                                shows how to fight fires in 20 of the most complex and difficult occupancies encountered
-                                during my 40-year career. </p>
-                            <p><i>Battlespace Combat</i> answers the most important questions about firefighting:
-                                Hose-line positioning; ground ladder placement; aerial ladder locating; primary smoke
-                                venting; locating trapped victims; how and where flame spreads inside and outside a
-                                building; collapse dangers; game-changing events; and last, but not least, how to
-                                evaluate successful and unsuccessful firefighting operations.</p>
-                            <p>This book is scheduled to be released very soon</p>
-
-                            <ul class="list-inline">
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <!--<a id="G-five_buy" class="btn btn-primary" href="https://fireengineeringbooks.com/command-and-control-of-fires-and-emergencies/" target="_blank">
-                                <!-- <i class="fas fa-times"></i> --> <!--
-                                Preorder Now</a> -->
+            <!-- actual modal contents -->
+            <div class="container"> <!-- Deleted divs: class="row", "col-lg-8 mx-auto", "modal-body" -->   
+                <div class="modal-vertical-flexbox">
+                    <div class="modal-title">
+                        <h2 class="modals text-uppercase text-main">Building Construction: The Firefighter's Battlespace</h2>
+                        <p class="item-intro text-muted text-subtitle">Vincent Dunn (Ret.), FDNY</p>
+                    </div>
+                    <div class="modal-non-title">
+                        <div class="modal-flexbox">
+                            <div class="modal-picture-frame">
+                                <img class="modal-book-cover" src="Home/images/theFirefighter'sBattlespace.jpg" alt="book cover">
+                            </div>
+                            <div class="modal-text">
+                                <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
+                                    firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
+                                    inside and outside of a burning building. A battlespace is not just the room and fire,
+                                    it includes much more. Dunn also tells us about firefighting “game changers” in this
+                                    book. A “game changer” is notification of an event, construction feature or fire growth
+                                    that changes an incident commander’s thinking or strategy.</p>
+                                
+                                <!-- <a id="G-one_buy" class="btn btn-primary"
+                                href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
+                                target="_blank"> Buy Now </a> -->
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-payment">
+                        <div id="paypal-button-container"></div>
                     </div>
                 </div>
             </div>
@@ -665,36 +675,40 @@
 <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <!-- x out -->
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(6)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="modals text-uppercase">Collapse of Burning Buildings</h2>
-                            <p class="subheader item-intro text-muted">Vincent Dunn (Ret.), FDNY</p>
-                            <div class="img-fluid d-block mx-auto"></div>
-                            <p>Chief Vincent Dunn, a 42-year fire service veteran, has updated his best-selling book
-                                which examines the dangers of structural failure caused by fire. This is the second
-                                edition of the first textbook written to warn firefighters, company officers, and fire
-                                chiefs about exactly how structures collapse when destroyed by fire--and examines the
-                                subject of burning building collapse in great detail. More importantly, this book,
-                                unlike any other publication, instructs firefighters and fire officers in how to survive
-                                burning building collapse.</p>
-                            <ul class="list-inline">
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <a id="G-six_buy" class="btn btn-primary"
-                               href="https://fireengineeringbooks.com/collapse-of-burning-buildings-a-guide-to-fireground-safety-second-edition/"
-                               target="_blank">
-                                <!-- <i class="fas fa-times"></i> -->
-                                Buy Now</a>
+            <!-- actual modal contents -->
+            <div class="container"> <!-- Deleted divs: class="row", "col-lg-8 mx-auto", "modal-body" -->   
+                <div class="modal-vertical-flexbox">
+                    <div class="modal-title">
+                        <h2 class="modals text-uppercase text-main">Building Construction: The Firefighter's Battlespace</h2>
+                        <p class="item-intro text-muted text-subtitle">Vincent Dunn (Ret.), FDNY</p>
+                    </div>
+                    <div class="modal-non-title">
+                        <div class="modal-flexbox">
+                            <div class="modal-picture-frame">
+                                <img class="modal-book-cover" src="Home/images/theFirefighter'sBattlespace.jpg" alt="book cover">
+                            </div>
+                            <div class="modal-text">
+                                <p>In his latest book, Chief Vincent Dunn declares firefighting is a war and buildings the
+                                    firefighter’s battlespace. Dunn says a battlespace is the total fire environment, the
+                                    inside and outside of a burning building. A battlespace is not just the room and fire,
+                                    it includes much more. Dunn also tells us about firefighting “game changers” in this
+                                    book. A “game changer” is notification of an event, construction feature or fire growth
+                                    that changes an incident commander’s thinking or strategy.</p>
+                                
+                                <!-- <a id="G-one_buy" class="btn btn-primary"
+                                href="https://www.fdnypro.org/books/building-construction-the-firefighters-battlespace/"
+                                target="_blank"> Buy Now </a> -->
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-payment">
+                        <div id="paypal-button-container"></div>
                     </div>
                 </div>
             </div>
@@ -707,7 +721,7 @@
 <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="margin: 0 auto; padding-bottom: 0; max-width: 600px;">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal" data-dismiss="modal" onclick="hideModal(7)">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
@@ -755,6 +769,10 @@
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/3debb69ff0.js" crossorigin="anonymous"></script>
+
+<!-- Paypal -->
+<script src="https://www.paypal.com/sdk/js?client-id=AZGMI7IqyJbDKoDoM39gP1DCnRjhUhQq6gbdZ6Jf4t2g2HSvQjsFw92Gn-y9Modot9hLisslJCvCImhu&currency=USD"></script>
+<script src="Home/js/paypal.js"></script>
 
 </body>
 </html>
