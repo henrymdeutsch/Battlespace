@@ -31,6 +31,8 @@ function hideModal(num) {
 function blackenBackground() {
     bodyEl = document.getElementById('blackCurtainz');  /* name is sensitive for some fucking reason */
     bodyEl.style.zIndex = '700';
+    bodyEl.style.opacity = '30%';
+    console.log('but got here');
 }
 
 function removeBlackBackground() {
@@ -125,6 +127,7 @@ if (relevantStart != -1 && relevantEnd != -1) {
     // document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
     // and try to blacken background
     blackenBackground();
+    console.log('called this');
 
     numAppended = urlAppended.slice(relevantStart + 12, relevantEnd);
     numAppended = parseInt(numAppended);
